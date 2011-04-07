@@ -1,16 +1,13 @@
 package Model;
 
 import java.sql.SQLException;
-import java.util.HashMap;
 import java.util.Vector;
 
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.PreparedStatement;
-import com.mysql.jdbc.ResultSet;
-import com.mysql.jdbc.Statement;
+import classes.Connector;
+import classes.Mot;
 
-import classes.*;
-import indexation.*;
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
 
 /**
  * Classe permettant la creation d'index à partir des données reçues

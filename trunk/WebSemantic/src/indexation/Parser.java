@@ -12,12 +12,20 @@ import java.util.Vector;
 import org.jdom.Element;
 import org.jdom.input.SAXBuilder;
 
+import classes.Mot;
+
 public class Parser {
 	static org.jdom.Document document;
 	static Element racine;
+
+	// création du tableau de mots à retourner
+	private Vector<Mot> _vectorMot = new Vector<Mot>();
 	
-	static void afficheALL()
+	public void parseDoc()
 	{
+		// récupération de la stopListe
+		Vector<String> stopListe = getStopListe();
+		
 		// récupération de la liste des noeuds intéressants pour le parsing
 		Element pres = racine.getChild("PRESENTATION");
 		String titre = pres.getChildText("TITRE");
@@ -49,7 +57,6 @@ public class Parser {
 			Element sec = (Element)iSecRecit.next();
 			
 			List pRecit = sec.getChildren("P");
-			System.out.println(pRecit.size());
 			
 			// on va itérer sur les P sous la balise SEC
 			Iterator iRecitSecPara = pRecit.iterator();
@@ -63,53 +70,52 @@ public class Parser {
 				
 				//création du tableau de tous les mots du paragraphe
 				String para = p.getText().toLowerCase();
-				String[] tabMot = para.split(" ");
+				String[] tabMot = para.split("[ ,;:!?.*/'(){}]"); // split sur plusieurs caractères de ponctuation
 				
-				Vector<String> vectorMot = new Vector<String>();
+				//Vector<String> vectorPara = new Vector<String>();
+				int positionMot = 1;
 				for(int i = 0 ; i < tabMot.length ; i++){
-					vectorMot.add(tabMot[i]);
-				}
-				
-				System.out.println("===================\nVector AVANT ");
-				for (String ch : vectorMot) {
-					System.out.println(ch);
-				}
-				
-				if(vectorMot.contains("la")){
-					System.out.println("===============\n============\nLA\n=============\n============");
-				}
-				
-				// suppression de tous les mots qui se trouvent dans la stop liste dans le P
-				String fichier = "D:\\Etudes\\M2 ICE 2010-2011\\WEB_SEMANTIQUE\\stopListe.txt";
-				
-				//lecture du fichier	
-				try{
-					InputStream ips = new FileInputStream(fichier); 
-					InputStreamReader ipsr = new InputStreamReader(ips);
-					BufferedReader br = new BufferedReader(ipsr);
-					String ligne;
-					while((ligne = br.readLine()) != null){
-						//System.out.println(ligne);
-						if(vectorMot.contains(ligne)){
-							//System.out.println(ligne);
-							vectorMot.remove(ligne);
-						}
+					String mot = tabMot[i].trim();// on supprime tous les espaces présents dans le mot
+					if(mot.length() > 0 && !stopListe.contains(mot)){	
+						Mot m = new Mot(mot, "", "", positionMot++);
+						//vectorPara.add(mot);
+						this._vectorMot.add(m);
 					}
-					
-					System.out.println("=======================\n\nVector APRES");
-					for (String ch : vectorMot) {
-						System.out.println(ch);
-					}
-					br.close(); 
-				}		
-				catch (Exception e){
-					System.out.println(e.toString());
 				}
+				
+//				System.out.println("=======================\n\nVector AVANT");
+//				for (String ch : vectorPara) {
+//					System.out.println("'"+ch+"'");
+//				}				
 				
 				// on ajoute l'élément courant dans le vecteur de description
 				vectorRecitSecPara.add(p);
 			}
 		}		
+	}
+	
+	public static Vector<String> getStopListe(){
+		String fichier = "D:\\Etudes\\M2 ICE 2010-2011\\WEB_SEMANTIQUE\\stopListe.txt";
+		Vector<String> vectorStopListe = new Vector<String>();
+		
+		//lecture du fichier	
+		try{
+			InputStream ips = new FileInputStream(fichier); 
+			InputStreamReader ipsr = new InputStreamReader(ips);
+			BufferedReader br = new BufferedReader(ipsr);
+			String ligne;
+			// pour tous les mots de la stopListe
+			while((ligne = br.readLine()) != null){
+				// ajout du stopMot dans le vecteur de stopListe
+				vectorStopListe.add(ligne);
+			}
+			br.close(); 
+		}		
+		catch (Exception e){
+			System.out.println(e.toString());
+		}
+		
+		return vectorStopListe;
 	}
 	   
 	public static void main(String[] args)
@@ -129,6 +135,16 @@ public class Parser {
 		//On initialise un nouvel élément racine avec l'élément racine du document.
 		racine = document.getRootElement();
 	
-	    afficheALL();
+		Parser p = new Parser();
+	    p.parseDoc();
+	    
+	    Vector<Mot> test = p.get_vectorMot();
+	    for(Mot m : test){
+	    	System.out.println(m.get_position()+" => "+m.get_chaine());
+	    }
+	}
+
+	public Vector<Mot> get_vectorMot() {
+		return _vectorMot;
 	}
 }

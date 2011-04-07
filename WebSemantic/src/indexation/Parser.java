@@ -21,12 +21,31 @@ public class Parser {
 	// création du tableau de mots à retourner
 	private Vector<Mot> _vectorMot = new Vector<Mot>();
 	
+	public Parser()
+	{
+		//On crée une instance de SAXBuilder
+		SAXBuilder sxb = new SAXBuilder();
+		try
+		{
+			//On crée un nouveau document JDOM avec en argument le fichier XML que l'on souhaite parser
+			//Le parsing est terminé ;)
+			document = sxb.build(new File("C:\\Users\\m2ice-2\\Desktop\\Projet Web semantique\\Collection\\d001.xml"));
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+	
+		//On initialise un nouvel élément racine avec l'élément racine du document.
+		racine = document.getRootElement();
+	}
+	
 	public void parseDoc()
 	{
 		// récupération de la stopListe
 		Vector<String> stopListe = getStopListe();
 		
 		// récupération de la liste des noeuds intéressants pour le parsing
+		
 		Element pres = racine.getChild("PRESENTATION");
 		String titre = pres.getChildText("TITRE");
 		String auteur = pres.getChildText("AUTEUR");	
@@ -95,7 +114,7 @@ public class Parser {
 	}
 	
 	public static Vector<String> getStopListe(){
-		String fichier = "D:\\Etudes\\M2 ICE 2010-2011\\WEB_SEMANTIQUE\\stopListe.txt";
+		String fichier = "C:\\Users\\m2ice-2\\Desktop\\Projet Web semantique\\Collection\\stopListe.txt";
 		Vector<String> vectorStopListe = new Vector<String>();
 		
 		//lecture du fichier	
@@ -118,22 +137,9 @@ public class Parser {
 		return vectorStopListe;
 	}
 	   
+	/*
 	public static void main(String[] args)
-	{
-		//On crée une instance de SAXBuilder
-		SAXBuilder sxb = new SAXBuilder();
-		try
-		{
-			//On crée un nouveau document JDOM avec en argument le fichier XML que l'on souhaite parser
-			//Le parsing est terminé ;)
-			document = sxb.build(new File("D:\\Etudes\\M2 ICE 2010-2011\\WEB_SEMANTIQUE\\Collection\\d001.xml"));
-		}
-		catch(Exception e){
-			e.printStackTrace();
-		}
-	
-		//On initialise un nouvel élément racine avec l'élément racine du document.
-		racine = document.getRootElement();
+	{		
 	
 		Parser p = new Parser();
 	    p.parseDoc();
@@ -143,7 +149,7 @@ public class Parser {
 	    	System.out.println(m.get_position()+" => "+m.get_chaine());
 	    }
 	}
-
+	*/
 	public Vector<Mot> get_vectorMot() {
 		return _vectorMot;
 	}

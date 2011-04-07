@@ -21,7 +21,7 @@ public class Connector
 		    try
 		     {
 		         Class.forName("com.mysql.jdbc.Driver");		         
-		         connection = (Connection) DriverManager.getConnection("jdbc:mysql://"+host+":3306/"+db+","+user+","+mdp);
+		         connection = (Connection) DriverManager.getConnection("jdbc:mysql://"+host+":3306/"+db,user, mdp);
 		         System.out.println("Connexion Ok");
 		     }
 		     catch(Exception cnfe)

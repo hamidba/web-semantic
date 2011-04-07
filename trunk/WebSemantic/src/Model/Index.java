@@ -67,7 +67,7 @@ public class Index
 	public int addMot(Mot m) throws SQLException
 	{		
 		Statement s = (Statement) _handlerBD.createStatement();
-		int count = s.executeUpdate("INSERT INTO mot (mot) VALUES ("+m.get_chaine()+") ");
+		int count = s.executeUpdate("INSERT INTO mot (mot) VALUES ('"+m.get_chaine()+"') ");
 		s.close();
 		return count;		
 	}

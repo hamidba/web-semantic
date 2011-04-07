@@ -7,6 +7,7 @@ import classes.Connector;
 import classes.Mot;
 
 import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.ResultSet;
 import com.mysql.jdbc.Statement;
 
 /**
@@ -97,6 +98,16 @@ public class Index
 		int resultSt1 = s.executeUpdate("INSERT INTO paragraphe (nomDoc, path, position, idMot) " +
 				"VALUES ('"+m.get_nomDoc()+"','"+m.get_path()+"',"+m.get_position()+", '"+m.get_chaine()+"')");
 		return resultSt1;
+	}
+	
+	
+	
+	public boolean motExiste(Mot mot) throws SQLException
+	{
+		Statement s = (Statement) _handlerBD.createStatement();
+		int res = s.executeUpdate("SELECT * FROM mot WHERE mot = '"+mot.get_chaine()+"'");
+		if(res < 1) return false;		
+		return true;		
 	}
 	
 	

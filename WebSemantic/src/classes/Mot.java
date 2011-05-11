@@ -8,10 +8,10 @@ package classes;
  */
 public class Mot 
 {
-	String _chaine;
-	String _path;
-	String _nomDoc;
-	Integer _position;
+	String _chaine; // le mot
+	String _path; // chemin pour retrouver le mot
+	String _nomDoc; // document dans lequel se trouve le mot
+	Integer _position; // position du mot dans le paragraphe
 
 
 	public Mot(String _chaine, String _path, String _nomDoc, int _position) 

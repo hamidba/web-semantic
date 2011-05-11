@@ -3,6 +3,7 @@ package indexation;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FilenameFilter;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Iterator;
@@ -20,6 +21,7 @@ public class Parser {
 
 	// création du tableau de mots à retourner
 	private Vector<Mot> _vectorMot = new Vector<Mot>();
+	private Vector<String> _stopListe = getStopListe();
 	
 	public Parser()
 	{
@@ -27,25 +29,42 @@ public class Parser {
 		SAXBuilder sxb = new SAXBuilder();
 		try
 		{
-			//On crée un nouveau document JDOM avec en argument le fichier XML que l'on souhaite parser
-			//Le parsing est terminé ;)
-			document = sxb.build(new File("C:\\Users\\m2ice-2\\Desktop\\Projet Web semantique\\Collection\\d001.xml"));
+			// on se place dans le répertoire contenant tous les fichiers xml
+			FilenameFilter filter = new FilenameFilter() {
+				
+				@Override
+				public boolean accept(File dir, String name) {
+					// TODO Auto-generated method stub
+					return name.endsWith(".xml");
+				}
+			};
+			
+			File repertoire = new File("D:\\Etudes\\M2 ICE 2010-2011\\WEB_SEMANTIQUE\\Collection");
+			File[] files = repertoire.listFiles(filter);
+			
+			System.out.println("Nombre de fichiers xml = "+files.length);
+			
+			// boucle sur le répertoire contenant tous les documents xml
+			for (File file : files) {
+				System.out.println(file.getName());
+				
+				//On crée un nouveau document JDOM avec en argument le fichier XML que l'on souhaite parser
+				document = sxb.build(file);
+				
+				//On initialise un nouvel élément racine avec l'élément racine du document.
+				racine = document.getRootElement();
+				
+				parseDoc();
+			}
 		}
 		catch(Exception e){
 			e.printStackTrace();
 		}
-	
-		//On initialise un nouvel élément racine avec l'élément racine du document.
-		racine = document.getRootElement();
 	}
 	
 	public void parseDoc()
-	{
-		// récupération de la stopListe
-		Vector<String> stopListe = getStopListe();
-		
-		// récupération de la liste des noeuds intéressants pour le parsing
-		
+	{		
+		// récupération de la liste des noeuds intéressants pour le parsing		
 		Element pres = racine.getChild("PRESENTATION");
 		String titre = pres.getChildText("TITRE");
 		String auteur = pres.getChildText("AUTEUR");	
@@ -56,9 +75,7 @@ public class Parser {
 		Vector<Element> vectorParaDesc = new Vector<Element>();
 		while(iDesc.hasNext())
 		{
-			//On recrée l'Element courant à chaque tour de boucle afin de
-			//pouvoir utiliser les méthodes propres aux Element comme :
-			//selectionner un noeud fils, modifier du texte, etc...
+			//On recrée l'Element courant à chaque tour de boucle
 			Element courant = (Element)iDesc.next();
 			
 			// on ajoute l'élément courant dans le vecteur de description
@@ -85,27 +102,19 @@ public class Parser {
 				// on récupère l'élément P courant
 				Element p = (Element)iRecitSecPara.next();
 				int positionPara = vectorRecitSecPara.size()+1;
-				//System.out.println(positionPara+" = "+p.getText());
 				
 				//création du tableau de tous les mots du paragraphe
 				String para = p.getText().toLowerCase();
 				String[] tabMot = para.split("[ ,;:!?.*/'(){}]"); // split sur plusieurs caractères de ponctuation
 				
-				//Vector<String> vectorPara = new Vector<String>();
 				int positionMot = 1;
 				for(int i = 0 ; i < tabMot.length ; i++){
 					String mot = tabMot[i].trim();// on supprime tous les espaces présents dans le mot
-					if(mot.length() > 0 && !stopListe.contains(mot)){	
+					if(mot.length() > 0 && !_stopListe.contains(mot)){	
 						Mot m = new Mot(mot, "", "", positionMot++);
-						//vectorPara.add(mot);
 						this._vectorMot.add(m);
 					}
-				}
-				
-//				System.out.println("=======================\n\nVector AVANT");
-//				for (String ch : vectorPara) {
-//					System.out.println("'"+ch+"'");
-//				}				
+				}				
 				
 				// on ajoute l'élément courant dans le vecteur de description
 				vectorRecitSecPara.add(p);
@@ -136,20 +145,7 @@ public class Parser {
 		
 		return vectorStopListe;
 	}
-	   
-	/*
-	public static void main(String[] args)
-	{		
 	
-		Parser p = new Parser();
-	    p.parseDoc();
-	    
-	    Vector<Mot> test = p.get_vectorMot();
-	    for(Mot m : test){
-	    	System.out.println(m.get_position()+" => "+m.get_chaine());
-	    }
-	}
-	*/
 	public Vector<Mot> get_vectorMot() {
 		return _vectorMot;
 	}

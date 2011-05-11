@@ -20,12 +20,9 @@ public class test {
 		
 		Parser p = new Parser();
 		Index ind = new Index();
-	    p.parseDoc();
 	    
 	    Vector<Mot> test = p.get_vectorMot();
 	    
 	    ind.createIndex(test);
-
 	}
-
 }

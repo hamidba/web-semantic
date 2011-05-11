@@ -1,5 +1,6 @@
 package Model;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
 
@@ -10,7 +11,7 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 
 /**
- * Classe permettant la creation d'index à partir des données reçues
+ * Classe permettant la creation d'index ˆ partir des données reçues
  * @author m2ice-2
  *
  */
@@ -23,7 +24,7 @@ public class Index
 	public Index()
 	{
 		//Mise en place de la connexion
-		_handlerBD = new Connector("127.0.0.1", "index", "root", "").getConnection();
+		_handlerBD = new Connector("127.0.0.1", "index", "root", "root").getConnection();
 
 	}
 	
@@ -40,20 +41,25 @@ public class Index
 		//Boucle sur la totalité du vector
 		for (Mot mot : _data)
 		{
-			System.out.println("Traitement du mot :" +mot.get_chaine() +" \n");
+			System.out.println(mot.get_chaine());
+			
 			//Insertion d'un mot dans la table
-			if(0 == addMot(mot))  
+			if(!motExiste(mot))
 			{
-				//l'insertion a échoué (Contrainte de clé primaire) -> nbOccur++ et Insertion d'une ligne dans la table para
-				addOccur(mot.get_chaine());
-				if(0 == addParagraphe(mot))	{System.out.println("Insertion paragraphe échouée"); }
+				//Le mot n'existe pas on l'insere
+				addMot(mot);
+				//Insertion reussie -> ajout ligne dans para
+				addParagraphe(mot);
 				
 			}
 			else
 			{
-				//Insertion reussie -> ajout ligne dans para
-				if(0 == addParagraphe(mot))	{System.out.println("Insertion paragraphe réussie"); }
+				//l'insertion a échoué (Contrainte de clŽ primaire) -> nbOccur++ et Insertion d'une ligne dans la table para
+				addOccur(mot.get_chaine());
+				//if(0 == addParagraphe(mot))	{System.out.println("Insertion paragraphe échouée"); }
 			}
+			
+			
 		}		
 	}
 	
@@ -67,7 +73,9 @@ public class Index
 	public int addMot(Mot m) throws SQLException
 	{		
 		Statement s = (Statement) _handlerBD.createStatement();
+		
 		int count = s.executeUpdate("INSERT INTO mot (mot) VALUES ('"+m.get_chaine()+"') ");
+		System.out.println("Count :"+count);
 		s.close();
 		return count;		
 	}
@@ -100,11 +108,11 @@ public class Index
 	}
 	
 	
-	public boolean motExiste(Mot mot) throws SQLException
+	public Boolean motExiste(Mot mot) throws SQLException
 	{
 		Statement s = (Statement) _handlerBD.createStatement();
-		int res = s.executeUpdate("SELECT * FROM mot WHERE mot = '"+mot.get_chaine()+"'");
-		if(res < 1) return false;		
-		return true;		
+		ResultSet res = s.executeQuery("SELECT * FROM mot WHERE mot = '"+mot.get_chaine()+"'");
+		return res.first();
+			
 	}
 }

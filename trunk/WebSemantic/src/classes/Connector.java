@@ -1,8 +1,7 @@
 package classes;
 
-import java.sql.*;
+import java.sql.DriverManager;
 
-import com.mysql.jdbc.*;
 import com.mysql.jdbc.Connection;
 
 /**
@@ -11,6 +10,7 @@ import com.mysql.jdbc.Connection;
  * @author m2ice-2
  *
  */
+
 public class Connector 
 {
 	Connection connection;
@@ -22,7 +22,7 @@ public class Connector
 		     {
 		         Class.forName("com.mysql.jdbc.Driver");		         
 		         connection = (Connection) DriverManager.getConnection("jdbc:mysql://"+host+":3306/"+db,user, mdp);
-		         System.out.println("Connexion Ok");
+		         //System.out.println("Connexion Ok");
 		     }
 		     catch(Exception cnfe)
 		     {

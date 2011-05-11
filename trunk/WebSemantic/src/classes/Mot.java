@@ -16,7 +16,6 @@ public class Mot
 
 	public Mot(String _chaine, String _path, String _nomDoc, int _position) 
 	{
-		super();
 		this._chaine = _chaine;
 		this._path = _path;
 		this._nomDoc = _nomDoc;

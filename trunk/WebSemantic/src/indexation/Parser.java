@@ -32,6 +32,7 @@ public class Parser {
 			// on se place dans le répertoire contenant tous les fichiers xml
 			FilenameFilter filter = new FilenameFilter() {
 				
+				
 				@Override
 				public boolean accept(File dir, String name) {
 					// TODO Auto-generated method stub
@@ -39,7 +40,7 @@ public class Parser {
 				}
 			};
 			
-			File repertoire = new File("D:\\Etudes\\M2 ICE 2010-2011\\WEB_SEMANTIQUE\\Collection");
+			File repertoire = new File("Collection");
 			File[] files = repertoire.listFiles(filter);
 			
 			System.out.println("Nombre de fichiers xml = "+files.length);
@@ -56,6 +57,7 @@ public class Parser {
 				
 				parseDoc();
 			}
+			System.out.println(_vectorMot.size());
 		}
 		catch(Exception e){
 			e.printStackTrace();
@@ -68,6 +70,7 @@ public class Parser {
 		Element pres = racine.getChild("PRESENTATION");
 		String titre = pres.getChildText("TITRE");
 		String auteur = pres.getChildText("AUTEUR");	
+		/*
 		List pDescription = pres.getChild("DESCRIPTION").getChildren("P");
 		
 		//On crée un Iterator sur notre liste de paragraphes description
@@ -81,6 +84,8 @@ public class Parser {
 			// on ajoute l'élément courant dans le vecteur de description
 			vectorParaDesc.add(courant);
 		}
+		
+		*/
 		
 		Element recit = racine.getChild("RECIT");
 		List secRecit = recit.getChildren("SEC");
@@ -105,7 +110,7 @@ public class Parser {
 				
 				//création du tableau de tous les mots du paragraphe
 				String para = p.getText().toLowerCase();
-				String[] tabMot = para.split("[ ,;:!?.*/'(){}]"); // split sur plusieurs caractères de ponctuation
+				String[] tabMot = para.split("[ ,;:!?.*/'(){}-\"]"); // split sur plusieurs caractères de ponctuation
 				
 				int positionMot = 1;
 				for(int i = 0 ; i < tabMot.length ; i++){
@@ -123,7 +128,7 @@ public class Parser {
 	}
 	
 	public static Vector<String> getStopListe(){
-		String fichier = "C:\\Users\\m2ice-2\\Desktop\\Projet Web semantique\\Collection\\stopListe.txt";
+		String fichier = "Collection/stopListe.txt";
 		Vector<String> vectorStopListe = new Vector<String>();
 		
 		//lecture du fichier	

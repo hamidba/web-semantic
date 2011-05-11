@@ -7,7 +7,6 @@ import classes.Connector;
 import classes.Mot;
 
 import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.ResultSet;
 import com.mysql.jdbc.Statement;
 
 /**
@@ -47,13 +46,13 @@ public class Index
 			{
 				//l'insertion a échoué (Contrainte de clé primaire) -> nbOccur++ et Insertion d'une ligne dans la table para
 				addOccur(mot.get_chaine());
-				if(0 == addParagraphe(mot))	{System.out.println("Insertion paragraphe échoué"); }
+				if(0 == addParagraphe(mot))	{System.out.println("Insertion paragraphe échouée"); }
 				
 			}
 			else
 			{
 				//Insertion reussie -> ajout ligne dans para
-				if(0 == addParagraphe(mot))	{System.out.println("Insertion paragraphe échoué"); }
+				if(0 == addParagraphe(mot))	{System.out.println("Insertion paragraphe réussie"); }
 			}
 		}		
 	}
@@ -101,7 +100,6 @@ public class Index
 	}
 	
 	
-	
 	public boolean motExiste(Mot mot) throws SQLException
 	{
 		Statement s = (Statement) _handlerBD.createStatement();
@@ -109,9 +107,4 @@ public class Index
 		if(res < 1) return false;		
 		return true;		
 	}
-	
-	
-	
-	
-
 }

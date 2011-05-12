@@ -15,7 +15,7 @@ import com.mysql.jdbc.Statement;
  * @author m2ice-2
  *
  */
-public class Index 
+public class Index
 {
 	private Vector<Mot> _data; //Tableau contenant tous les mots de tous les documents 
 	private Connection _handlerBD;
@@ -41,7 +41,8 @@ public class Index
 		//Boucle sur la totalitÈ du vector
 		for (Mot mot : _data)
 		{
-			System.out.println(mot.get_chaine());
+			System.out.println(mot.get_nomDoc());
+			
 			
 			//Insertion d'un mot dans la table
 			if(!motExiste(mot))
@@ -56,7 +57,7 @@ public class Index
 			{
 				//l'insertion a ÈchouÈ (Contrainte de clé primaire) -> nbOccur++ et Insertion d'une ligne dans la table para
 				addOccur(mot.get_chaine());
-				//if(0 == addParagraphe(mot))	{System.out.println("Insertion paragraphe ÈchouÈe"); }
+				addParagraphe(mot);
 			}
 			
 			
@@ -102,9 +103,19 @@ public class Index
 	public int addParagraphe(Mot m) throws SQLException
 	{
 		Statement s = (Statement) _handlerBD.createStatement();
-		int resultSt1 = s.executeUpdate("INSERT INTO paragraphe (nomDoc, path, position, idMot) " +
-				"VALUES ('"+m.get_nomDoc()+"','"+m.get_path()+"',"+m.get_position()+", '"+m.get_chaine()+"')");
-		return resultSt1;
+		ResultSet rs = s.executeQuery("SELECT mot FROM paragraphe WHERE mot = '"+m.get_chaine()+"' AND path = '"+m.get_path()+"' AND nomDoc = '"+m.get_nomDoc()+"'");
+		
+		if(rs.first())
+		{
+			//Le mot existe déja dans le paragraphe on incremente sa fréquence
+			s.execute("UPDATE paragraphe SET freq_mot = freq_mot+1 WHERE mot = '"+m.get_chaine()+"' AND path = '"+m.get_path()+"' AND nomDoc = '"+m.get_nomDoc()+"'");
+			return 0;
+		}
+		else
+		{
+			return s.executeUpdate("INSERT INTO paragraphe (nomDoc, path, position, mot) " +
+					"VALUES ('"+m.get_nomDoc()+"','"+m.get_path()+"',"+m.get_position()+", '"+m.get_chaine()+"')");
+		}
 	}
 	
 	
@@ -115,4 +126,40 @@ public class Index
 		return res.first();
 			
 	}
+	
+	/**
+	 * Retourne freq_mot
+	 * @param mot
+	 * @throws SQLException 
+	 */
+	public Vector getNbOccur(String mot) throws SQLException
+	{
+		Vector<Mot> listeMots = null;
+		Statement s = (Statement) _handlerBD.createStatement();
+		ResultSet res = s.executeQuery("SELECT nomDoc, path, freq_mot FROM paragraphe WHERE mot = '"+mot+"'");
+		
+		while(res.next())
+		{
+			Mot m = new Mot(mot, res.getString("path"), res.getString("nomDoc"), 0);
+			listeMots.add(res.getInt("freq_mot"), m);
+		}
+		
+		return listeMots;
+		
+	}
+	
+	/**
+	 * Retourne le nombre total d'apparition d'un mot ds un paragraphe
+	 * @param mot
+	 * @return
+	 * @throws SQLException 
+	 */
+	public int getNbMotPara(String path) throws SQLException
+	{
+		Statement s = (Statement) _handlerBD.createStatement();
+		ResultSet res = s.executeQuery("SELECT SUM(freq_mot) FROM paragraphe WHERE path = '"+path+"'");
+		return res.getInt(1);
+	}
+	
+	
 }

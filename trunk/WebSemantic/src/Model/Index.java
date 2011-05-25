@@ -2,6 +2,9 @@ package Model;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Vector;
 
 import classes.Connector;
@@ -127,24 +130,42 @@ public class Index
 			
 	}
 	
+	
+	
 	/**
 	 * Retourne freq_mot
 	 * @param mot
 	 * @throws SQLException 
 	 */
-	public Vector getNbOccur(String mot) throws SQLException
+	public HashMap getAll(String mot) throws SQLException
 	{
-		Vector<Mot> listeMots = null;
+		HashMap listeMots = null;
 		Statement s = (Statement) _handlerBD.createStatement();
 		ResultSet res = s.executeQuery("SELECT nomDoc, path, freq_mot FROM paragraphe WHERE mot = '"+mot+"'");
 		
 		while(res.next())
 		{
 			Mot m = new Mot(mot, res.getString("path"), res.getString("nomDoc"), 0);
-			listeMots.add(res.getInt("freq_mot"), m);
+			listeMots.put(res.getInt("freq_mot"), m);
+			
 		}
 		
 		return listeMots;
+		
+	}
+	
+	
+	public double getFrequenceMot(String mot, String path) throws SQLException
+	{
+		Statement s = (Statement) _handlerBD.createStatement(ResultSet.TYPE_FORWARD_ONLY,
+				ResultSet.CONCUR_READ_ONLY);
+		
+		ResultSet rs = s.executeQuery("SELECT freq_mot FROM paragraphe WHERE mot = '"+mot+"' and path= '"+path+"'");
+		if (rs.first())
+		{
+			return (double)rs.getDouble(1);
+		}
+		return 0;
 		
 	}
 	
@@ -157,9 +178,189 @@ public class Index
 	public int getNbMotPara(String path) throws SQLException
 	{
 		Statement s = (Statement) _handlerBD.createStatement();
-		ResultSet res = s.executeQuery("SELECT SUM(freq_mot) FROM paragraphe WHERE path = '"+path+"'");
-		return res.getInt(1);
+		ResultSet res = s.executeQuery("SELECT SUM(freq_mot) as sumFreq FROM paragraphe WHERE path = '"+path+"'");
+		if(res.first()) 
+		{
+			return res.getInt("sumFreq");
+		
+		}
+		return 0;
 	}
+	
+	
+	
+	public int getNbMotParagraphes(String mot) throws SQLException
+	{
+		Statement s = (Statement) _handlerBD.createStatement();
+		ResultSet res = s.executeQuery("SELECT SUM(freq_mot) as sumFreq FROM paragraphe WHERE mot = '"+mot+"'");
+		if(res.first()) 
+		{
+			return res.getInt("sumFreq");
+		
+		}
+		return 0;
+	}
+	
+	public int getNbParagraphe() throws SQLException
+	{
+		Statement s = (Statement) _handlerBD.createStatement();
+		ResultSet res = s.executeQuery("SELECT COUNT(idPar) as nbPar FROM paragraphe");
+		res.first();
+		
+		return res.getInt("nbPar");
+	}
+	
+	public int countMotParagraphe(String mot) throws SQLException
+	{
+		Statement s = (Statement) _handlerBD.createStatement();
+		ResultSet res = s.executeQuery("SELECT COUNT(idPar) as nb FROM paragraphe where mot = '"+mot+"'");
+		
+		if(res.first()) 
+		{
+			return res.getInt("nb");
+		}
+		
+		return 0;
+	}
+	
+	public String getParagraphe(String path) throws SQLException
+	{
+		Statement s = (Statement) _handlerBD.createStatement();
+		ResultSet res = s.executeQuery("SELECT path FROM paragraphe where path = '"+path+"'");
+		return res.getArray(1).toString();
+		
+	}
+	
+	public void ponderer () throws SQLException
+	{
+		String mot;
+		String path;
+		int nbApparition, nbParagraphe;
+		double idf;
+		double freq;
+		int nbMotPara;
+		double tf;
+		
+		Statement s = (Statement) _handlerBD.createStatement();
+		
+		ResultSet rs = s.executeQuery("SELECT mot, path FROM paragraphe");
+		
+		while(rs.next())
+		{
+			//On recupère un mot
+			mot = rs.getString("mot");
+			path = rs.getString("path");
+			
+			//Calcul IDF
+			nbApparition = getNbMotParagraphes(mot);
+			nbParagraphe = countMotParagraphe(mot);
+			idf = (double) nbApparition/nbParagraphe;
+			
+			//Calcul TF
+		    freq = getFrequenceMot(mot, path);
+		    nbMotPara = getNbMotPara(path);
+		    tf = (double)freq/nbMotPara;
+		    
+		    //Calcul TF*IDF
+		    double tfxIdf = tf*idf;
+		    
+		    //Insertion du poid dans l'index (TF*IDF)
+		    Statement s2 = (Statement) _handlerBD.createStatement();
+			
+			int result = s2.executeUpdate("UPDATE paragraphe SET poid = "+tfxIdf+" WHERE mot = '"+mot+"' AND path='"+path+"'");
+			
+			System.out.println(mot+" "+result);
+		}
+		s.close();
+		rs.close();
+	}
+	
+	
+	
+	public Vector<String> getVocabulaire() throws SQLException
+	{
+		
+		
+		Statement s = (Statement) _handlerBD.createStatement();
+		
+		ResultSet rs = s.executeQuery("SELECT mot FROM mot");
+		
+		if( rs.first() )
+		{
+			Vector<String> vocabulaire = new Vector<String>();
+			
+			while(rs.next())
+			{
+				vocabulaire.add(rs.getString(1));
+			}
+			
+			return vocabulaire;
+		}
+		
+		return null;
+	}
+	
+	
+	
+	public Vector getDistinctParagraphe() throws SQLException
+	{
+		
+	
+		Statement s = (Statement) _handlerBD.createStatement();
+		
+		ResultSet rs = s.executeQuery("SELECT distinct path, nomDoc FROM paragraphe");
+		
+		if( rs.first() )
+		{
+			Vector paragraphes = new Vector();
+			int cpt = 0;
+			
+			while(rs.next())
+			{
+				
+				paragraphes.add(rs.getString(1)+" "+rs.getString(2));
+				cpt++;
+			}
+			
+			return paragraphes;
+			
+		}
+		return null;
+		
+	}
+	
+	public Vector<Double> getVectorParagraphe(String path, Vector<String> vocabulaire) throws SQLException
+	{
+		
+		Statement s = (Statement) _handlerBD.createStatement();
+		String[] test = path.split(" ");
+		ResultSet rs = s.executeQuery("SELECT mot, poid FROM paragraphe where path ='"+test[0]+"' and nomDoc = '"+test[1]+"'");
+		
+		if( rs.first() )
+		{
+			int n = vocabulaire.size();
+			Vector<Double> paragraphe = new Vector<Double>();
+			paragraphe.setSize(n);
+			int indexMot;
+			
+			while(rs.next())
+			{
+				if(vocabulaire.contains(rs.getString(1)))
+				{
+					indexMot = vocabulaire.indexOf(rs.getString(1));
+					paragraphe.insertElementAt(rs.getDouble(2), indexMot);
+				}
+				
+				
+			}
+			
+			return paragraphe;
+		}
+		
+		return null;
+		
+	}
+	
 	
 	
 }

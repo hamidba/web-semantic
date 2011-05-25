@@ -1,0 +1,3122 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY Ontology1262945733986 "http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#" >
+    <!ENTITY Lac_d "http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Lac_d&#39;" >
+    <!ENTITY Val_d "http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Val_d&#39;" >
+    <!ENTITY Pays_d "http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Pays_d&#39;" >
+    <!ENTITY Arthur "http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Arthur&#39;" >
+    <!ENTITY Mont_d "http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Mont_d&#39;" >
+    <!ENTITY Côte_d "http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#C&#244;te_d&#39;" >
+    <!ENTITY cours_d "http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#cours_d&#39;" >
+    <!ENTITY Etang_d "http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Etang_d&#39;" >
+    <!ENTITY Vallée_d "http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Vall&#233;e_d&#39;" >
+    <!ENTITY Lac_de_l "http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Lac_de_l&#39;" >
+    <!ENTITY Volcan_d "http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Volcan_d&#39;" >
+    <!ENTITY Glacier_d "http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier_d&#39;" >
+    <!ENTITY Glacier_de_l "http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier_de_l&#39;" >
+    <!ENTITY est_le_lieu_d "http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#est_le_lieu_d&#39;" >
+    <!ENTITY Provence-Alpes-Côte_d "http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Provence-Alpes-C&#244;te_d&#39;" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#"
+     xml:base="http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl"
+     xmlns:Volcan_d="&Ontology1262945733986;Volcan_d&#39;"
+     xmlns:Vallée_d="&Ontology1262945733986;Vall&#233;e_d&#39;"
+     xmlns:cours_d="&Ontology1262945733986;cours_d&#39;"
+     xmlns:Mont_d="&Ontology1262945733986;Mont_d&#39;"
+     xmlns:Etang_d="&Ontology1262945733986;Etang_d&#39;"
+     xmlns:Côte_d="&Ontology1262945733986;C&#244;te_d&#39;"
+     xmlns:est_le_lieu_d="&Ontology1262945733986;est_le_lieu_d&#39;"
+     xmlns:Pays_d="&Ontology1262945733986;Pays_d&#39;"
+     xmlns:Lac_de_l="&Ontology1262945733986;Lac_de_l&#39;"
+     xmlns:Arthur="&Ontology1262945733986;Arthur&#39;"
+     xmlns:Ontology1262945733986="http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#"
+     xmlns:Glacier_d="&Ontology1262945733986;Glacier_d&#39;"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Lac_d="&Ontology1262945733986;Lac_d&#39;"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:Val_d="&Ontology1262945733986;Val_d&#39;"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:Provence-Alpes-Côte_d="&Ontology1262945733986;Provence-Alpes-C&#244;te_d&#39;"
+     xmlns:Glacier_de_l="&Ontology1262945733986;Glacier_de_l&#39;">
+    <owl:Ontology rdf:about=""/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#A_pour_climat -->
+
+    <owl:ObjectProperty rdf:about="#A_pour_climat">
+        <rdfs:range rdf:resource="#Climat"/>
+        <rdfs:domain rdf:resource="#Lieu"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#A_pour_climent_montagneux -->
+
+    <owl:ObjectProperty rdf:about="#A_pour_climent_montagneux">
+        <rdfs:subPropertyOf rdf:resource="#A_pour_climat"/>
+        <rdfs:range rdf:resource="#Glace"/>
+        <rdfs:range rdf:resource="#Neige"/>
+        <rdfs:range rdf:resource="#Soleil"/>
+        <rdfs:domain rdf:resource="#lieu_montagneux"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Est_contenu_dans -->
+
+    <owl:ObjectProperty rdf:about="#Est_contenu_dans">
+        <rdfs:subPropertyOf rdf:resource="#Est_situ&#233;_g&#233;ographiquement_dans"/>
+        <rdfs:range rdf:resource="#Lieu_Administratif"/>
+        <rdfs:domain rdf:resource="#Lieu_Naturel"/>
+        <rdfs:domain rdf:resource="#Lieu_Non_Naturel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Est_le_lieu_de -->
+
+    <owl:ObjectProperty rdf:about="#Est_le_lieu_de">
+        <rdfs:range rdf:resource="#Activit&#233;"/>
+        <rdfs:domain rdf:resource="#Lieu"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Est_situ&#233;_g&#233;ographiquement_dans -->
+
+    <owl:ObjectProperty rdf:about="#Est_situ&#233;_g&#233;ographiquement_dans">
+        <rdfs:range rdf:resource="#Lieu"/>
+        <rdfs:domain rdf:resource="#Lieu"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#appartient_a_la_region -->
+
+    <owl:ObjectProperty rdf:about="#appartient_a_la_region">
+        <rdfs:domain rdf:resource="#D&#233;partement"/>
+        <rdfs:range rdf:resource="#R&#233;gion_administrative"/>
+        <rdfs:subPropertyOf rdf:resource="#est_rattach&#233;_administraivement_&#224;"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#appartient_a_la_region_culturelle -->
+
+    <owl:ObjectProperty rdf:about="#appartient_a_la_region_culturelle">
+        <rdfs:range rdf:resource="#D&#233;partement"/>
+        <rdfs:domain rdf:resource="#R&#233;gion_culturelle"/>
+        <rdfs:subPropertyOf rdf:resource="#est_rattach&#233;_administraivement_&#224;"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#appartient_a_un_continent -->
+
+    <owl:ObjectProperty rdf:about="#appartient_a_un_continent">
+        <rdfs:range rdf:resource="#Continent"/>
+        <rdfs:domain rdf:resource="#Pays"/>
+        <rdfs:subPropertyOf rdf:resource="#est_rattach&#233;_administraivement_&#224;"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#appartient_a_un_pays -->
+
+    <owl:ObjectProperty rdf:about="#appartient_a_un_pays">
+        <rdfs:range rdf:resource="#Pays"/>
+        <rdfs:domain rdf:resource="#R&#233;gion"/>
+        <rdfs:subPropertyOf rdf:resource="#est_rattach&#233;_administraivement_&#224;"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#appartient_au_departement -->
+
+    <owl:ObjectProperty rdf:about="#appartient_au_departement">
+        <rdfs:range rdf:resource="#D&#233;partement"/>
+        <rdfs:domain rdf:resource="#Village"/>
+        <rdfs:domain rdf:resource="#Ville"/>
+        <rdfs:subPropertyOf rdf:resource="#est_rattach&#233;_administraivement_&#224;"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#appartient_&#224; -->
+
+    <owl:ObjectProperty rdf:about="#appartient_&#224;">
+        <rdfs:subPropertyOf rdf:resource="#Est_situ&#233;_g&#233;ographiquement_dans"/>
+        <rdfs:range rdf:resource="#Massif_Montagneux"/>
+        <rdfs:domain rdf:resource="#&#233;l&#233;ment_Montagneux"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#est_le_lieu_d&#39;activit&#233;_aquatique -->
+
+    <owl:ObjectProperty rdf:about="#est_le_lieu_d&#39;activit&#233;_aquatique">
+        <rdfs:subPropertyOf rdf:resource="#Est_le_lieu_de"/>
+        <rdfs:range rdf:resource="#Sport_Aquatique"/>
+        <rdfs:domain rdf:resource="#lieu_Aquatique"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#est_le_lieu_d_activit&#233;_montagneuse -->
+
+    <owl:ObjectProperty rdf:about="#est_le_lieu_d_activit&#233;_montagneuse">
+        <rdfs:subPropertyOf rdf:resource="#Est_le_lieu_de"/>
+        <rdfs:range rdf:resource="#Randonnee"/>
+        <rdfs:range rdf:resource="#Sport_de_Montagne"/>
+        <rdfs:domain rdf:resource="#lieu_montagneux"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#est_rattach&#233;_administraivement_&#224; -->
+
+    <owl:ObjectProperty rdf:about="#est_rattach&#233;_administraivement_&#224;">
+        <rdfs:domain rdf:resource="#Lieu_Administratif"/>
+        <rdfs:range rdf:resource="#Lieu_Administratif"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#est_un_lieu_dactivit&#233;_culturelle -->
+
+    <owl:ObjectProperty rdf:about="#est_un_lieu_dactivit&#233;_culturelle">
+        <rdfs:subPropertyOf rdf:resource="#Est_le_lieu_de"/>
+        <rdfs:domain rdf:resource="#Lieu_de_loisir"/>
+        <rdfs:range rdf:resource="#Tourisme_Culturel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#habite_dans -->
+
+    <owl:ObjectProperty rdf:about="#habite_dans">
+        <rdfs:range rdf:resource="#Habitation"/>
+        <rdfs:domain rdf:resource="#Humain"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#pratique -->
+
+    <owl:ObjectProperty rdf:about="#pratique">
+        <rdfs:range rdf:resource="#Activit&#233;"/>
+        <rdfs:domain rdf:resource="#Humain"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Abbaye -->
+
+    <owl:Class rdf:about="#Abbaye">
+        <rdfs:label xml:lang="fr">abbaye</rdfs:label>
+        <rdfs:label>clo&#238;tre</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Monument_Religieux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Activit&#233; -->
+
+    <owl:Class rdf:about="#Activit&#233;"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Alpinisme -->
+
+    <owl:Class rdf:about="#Alpinisme">
+        <rdfs:label xml:lang="fr">alpinisme</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Sport_de_Montagne"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Alpiniste -->
+
+    <owl:Class rdf:about="#Alpiniste">
+        <rdfs:label xml:lang="fr">alpiniste</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Humain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Autoroute -->
+
+    <owl:Class rdf:about="#Autoroute">
+        <rdfs:label xml:lang="fr">autoroute</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Route"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Baignade -->
+
+    <owl:Class rdf:about="#Baignade">
+        <rdfs:label xml:lang="fr">baignade</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Sport_Aquatique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Basilique -->
+
+    <owl:Class rdf:about="#Basilique">
+        <rdfs:label xml:lang="fr">basilique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Monument_Religieux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Brouillard -->
+
+    <owl:Class rdf:about="#Brouillard">
+        <rdfs:label xml:lang="fr">brouillard</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Climat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Camping -->
+
+    <owl:Class rdf:about="#Camping">
+        <rdfs:label xml:lang="fr">camping</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Habitation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Cascade -->
+
+    <owl:Class rdf:about="#Cascade">
+        <rdfs:label xml:lang="fr">cascade</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#lieu_Aquatique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Cath&#233;drale -->
+
+    <owl:Class rdf:about="#Cath&#233;drale">
+        <rdfs:label xml:lang="fr">cath&#233;drale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Monument_Religieux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Chalet -->
+
+    <owl:Class rdf:about="#Chalet">
+        <rdfs:label xml:lang="fr">chalet</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Habitation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Chapelle -->
+
+    <owl:Class rdf:about="#Chapelle">
+        <rdfs:label xml:lang="fr">chaquelle</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Monument_Religieux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Chateau -->
+
+    <owl:Class rdf:about="#Chateau">
+        <rdfs:label xml:lang="fr">chateau</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Monument_Historique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Chemin -->
+
+    <owl:Class rdf:about="#Chemin">
+        <rdfs:label xml:lang="fr">chemin</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Route"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Cin&#233;ma -->
+
+    <owl:Class rdf:about="#Cin&#233;ma">
+        <rdfs:label>cin&#233;</rdfs:label>
+        <rdfs:label xml:lang="fr">cin&#233;ma</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Lieu_de_loisir"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Cirque -->
+
+    <owl:Class rdf:about="#Cirque">
+        <rdfs:label xml:lang="fr">cirque</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#&#233;l&#233;ment_Montagneux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Climat -->
+
+    <owl:Class rdf:about="#Climat">
+        <rdfs:label>m&#233;t&#233;o</rdfs:label>
+        <rdfs:label xml:lang="fr">climat</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Element_Naturel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Col -->
+
+    <owl:Class rdf:about="#Col">
+        <rdfs:label xml:lang="fr">col</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#&#233;l&#233;ment_Montagneux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Colline -->
+
+    <owl:Class rdf:about="#Colline">
+        <rdfs:label xml:lang="fr">colline</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#&#233;l&#233;ment_Montagneux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Continent -->
+
+    <owl:Class rdf:about="#Continent">
+        <rdfs:label xml:lang="fr">continent</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Lieu_Administratif"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Croisi&#232;re -->
+
+    <owl:Class rdf:about="#Croisi&#232;re">
+        <rdfs:label xml:lang="fr">croisi&#232;re</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Voyage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Cr&#234;te -->
+
+    <owl:Class rdf:about="#Cr&#234;te">
+        <rdfs:label xml:lang="fr">cr&#234;te</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#&#233;l&#233;ment_Montagneux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#C&#244;te -->
+
+    <owl:Class rdf:about="#C&#244;te">
+        <rdfs:label>crique</rdfs:label>
+        <rdfs:label>plage</rdfs:label>
+        <rdfs:label xml:lang="fr">c&#244;te</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#lieu_Aquatique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#D&#233;partement -->
+
+    <owl:Class rdf:about="#D&#233;partement">
+        <rdfs:label xml:lang="fr">d&#233;partement</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Lieu_Administratif"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#D&#233;partementale -->
+
+    <owl:Class rdf:about="#D&#233;partementale">
+        <rdfs:label xml:lang="fr">d&#233;partementale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Route"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Element_Naturel -->
+
+    <owl:Class rdf:about="#Element_Naturel"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Faune -->
+
+    <owl:Class rdf:about="#Faune">
+        <rdfs:label>animaux</rdfs:label>
+        <rdfs:label>animal</rdfs:label>
+        <rdfs:label xml:lang="fr">faune</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Element_Naturel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Ferme -->
+
+    <owl:Class rdf:about="#Ferme">
+        <rdfs:label xml:lang="fr">ferme</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Habitation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Flore -->
+
+    <owl:Class rdf:about="#Flore">
+        <rdfs:label>v&#233;g&#233;tation</rdfs:label>
+        <rdfs:label xml:lang="fr">flore</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Element_Naturel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#For&#234;t -->
+
+    <owl:Class rdf:about="#For&#234;t">
+        <rdfs:label>pini&#232;re</rdfs:label>
+        <rdfs:label>bois</rdfs:label>
+        <rdfs:label>taillis</rdfs:label>
+        <rdfs:label xml:lang="fr">for&#234;t</rdfs:label>
+        <rdfs:label>futaie</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#lieu_Terrestre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glace -->
+
+    <owl:Class rdf:about="#Glace">
+        <rdfs:label xml:lang="fr">glace</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Climat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier -->
+
+    <owl:Class rdf:about="#Glacier">
+        <rdfs:label xml:lang="fr">glacier</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#&#233;l&#233;ment_Montagneux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Gorge -->
+
+    <owl:Class rdf:about="#Gorge">
+        <rdfs:label xml:lang="fr">gorge</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#&#233;l&#233;ment_Montagneux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Grotte -->
+
+    <owl:Class rdf:about="#Grotte">
+        <rdfs:label xml:lang="fr">grotte</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#&#233;l&#233;ment_Montagneux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Gr&#234;le -->
+
+    <owl:Class rdf:about="#Gr&#234;le">
+        <rdfs:label xml:lang="fr">gr&#234;le</rdfs:label>
+        <rdfs:label>gr&#234;lon</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Climat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Habitation -->
+
+    <owl:Class rdf:about="#Habitation">
+        <rdfs:label xml:lang="fr">habitation</rdfs:label>
+        <rdfs:label>logis</rdfs:label>
+        <rdfs:label>logement</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Lieu_Non_Naturel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Humain -->
+
+    <owl:Class rdf:about="#Humain">
+        <rdfs:label>femme</rdfs:label>
+        <rdfs:label>personne</rdfs:label>
+        <rdfs:label>homme</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Faune"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#H&#244;tel -->
+
+    <owl:Class rdf:about="#H&#244;tel">
+        <rdfs:label xml:lang="fr">h&#244;tel</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Habitation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Immeuble -->
+
+    <owl:Class rdf:about="#Immeuble">
+        <rdfs:label>appartement</rdfs:label>
+        <rdfs:label xml:lang="fr">immeuble</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Habitation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Insecte -->
+
+    <owl:Class rdf:about="#Insecte">
+        <rdfs:label xml:lang="fr">insecte</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Faune"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Lac -->
+
+    <owl:Class rdf:about="#Lac">
+        <rdfs:label>barrage</rdfs:label>
+        <rdfs:label>estany</rdfs:label>
+        <rdfs:label xml:lang="fr">lac</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#lieu_Aquatique"/>
+        <rdfs:comment>&#233;tang</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Lieu -->
+
+    <owl:Class rdf:about="#Lieu">
+        <rdfs:label>site</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Lieu_Administratif -->
+
+    <owl:Class rdf:about="#Lieu_Administratif">
+        <rdfs:label xml:lang="fr"
+            >lieu administratif</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Lieu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Lieu_Naturel -->
+
+    <owl:Class rdf:about="#Lieu_Naturel">
+        <rdfs:label xml:lang="fr">lieu naturel</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Lieu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Lieu_Non_Naturel -->
+
+    <owl:Class rdf:about="#Lieu_Non_Naturel">
+        <rdfs:label>lieu artificiel</rdfs:label>
+        <rdfs:label xml:lang="fr">lieu naturel</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Lieu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Lieu_de_loisir -->
+
+    <owl:Class rdf:about="#Lieu_de_loisir">
+        <rdfs:label xml:lang="fr">lieu de d&#233;tente</rdfs:label>
+        <rdfs:label xml:lang="fr">lieu de loisir</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Lieu_Non_Naturel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Luge -->
+
+    <owl:Class rdf:about="#Luge">
+        <rdfs:label xml:lang="fr">luge</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Sport_de_Montagne"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Maison -->
+
+    <owl:Class rdf:about="#Maison">
+        <rdfs:label>maison</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Habitation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Mammif&#232;re -->
+
+    <owl:Class rdf:about="#Mammif&#232;re">
+        <rdfs:label xml:lang="fr">mammif&#232;re</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Faune"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Marche -->
+
+    <owl:Class rdf:about="#Marche">
+        <rdfs:label xml:lang="fr">marche</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Sport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Massif_Montagneux -->
+
+    <owl:Class rdf:about="#Massif_Montagneux">
+        <rdfs:subClassOf rdf:resource="#lieu_montagneux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Mer -->
+
+    <owl:Class rdf:about="#Mer">
+        <rdfs:label xml:lang="fr">mer</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#lieu_Aquatique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Mont -->
+
+    <owl:Class rdf:about="#Mont">
+        <rdfs:label xml:lang="fr">mont</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#&#233;l&#233;ment_Montagneux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Monument -->
+
+    <owl:Class rdf:about="#Monument">
+        <rdfs:label>b&#226;timent</rdfs:label>
+        <rdfs:label xml:lang="fr">monument</rdfs:label>
+        <rdfs:label>&#233;difice</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Lieu_Non_Naturel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Monument_Historique -->
+
+    <owl:Class rdf:about="#Monument_Historique">
+        <rdfs:label xml:lang="fr"
+            >monument historique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Monument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Monument_Religieux -->
+
+    <owl:Class rdf:about="#Monument_Religieux">
+        <rdfs:subClassOf rdf:resource="#Monument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Mus&#233;e -->
+
+    <owl:Class rdf:about="#Mus&#233;e">
+        <rdfs:label>conservatoire</rdfs:label>
+        <rdfs:label>galerie</rdfs:label>
+        <rdfs:label xml:lang="fr">mus&#233;e</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Lieu_de_loisir"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Nageur -->
+
+    <owl:Class rdf:about="#Nageur">
+        <rdfs:label xml:lang="fr">nageur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Humain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Natation -->
+
+    <owl:Class rdf:about="#Natation">
+        <rdfs:label>nage</rdfs:label>
+        <rdfs:label xml:lang="fr">natation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Sport_Aquatique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Nationale -->
+
+    <owl:Class rdf:about="#Nationale">
+        <rdfs:label xml:lang="fr">nationale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Route"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Neige -->
+
+    <owl:Class rdf:about="#Neige">
+        <rdfs:label>flocon</rdfs:label>
+        <rdfs:label xml:lang="fr">neige</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Climat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Nuage -->
+
+    <owl:Class rdf:about="#Nuage">
+        <rdfs:label xml:lang="fr">nuage</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Climat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Oc&#233;an -->
+
+    <owl:Class rdf:about="#Oc&#233;an">
+        <rdfs:label xml:lang="fr">oc&#233;an</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#lieu_Aquatique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Oiseau -->
+
+    <owl:Class rdf:about="#Oiseau">
+        <rdfs:label xml:lang="fr">oiseau</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Faune"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Palais -->
+
+    <owl:Class rdf:about="#Palais">
+        <rdfs:label xml:lang="fr">palais</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Monument_Historique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Pays -->
+
+    <owl:Class rdf:about="#Pays">
+        <rdfs:label xml:lang="fr">pays</rdfs:label>
+        <rdfs:label>&#233;tat</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Lieu_Administratif"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Perroquet -->
+
+    <owl:Class rdf:about="#Perroquet">
+        <rdfs:label>ara</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Oiseau"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Piste -->
+
+    <owl:Class rdf:about="#Piste">
+        <rdfs:label xml:lang="fr">piste</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Route"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Plaine -->
+
+    <owl:Class rdf:about="#Plaine">
+        <rdfs:label xml:lang="fr">plaine</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#lieu_Terrestre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Plateau -->
+
+    <owl:Class rdf:about="#Plateau">
+        <rdfs:label xml:lang="fr">plateau</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#&#233;l&#233;ment_Montagneux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Pluie -->
+
+    <owl:Class rdf:about="#Pluie">
+        <rdfs:label>bruine</rdfs:label>
+        <rdfs:label>averse</rdfs:label>
+        <rdfs:label>crachin</rdfs:label>
+        <rdfs:label xml:lang="fr">pluie</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Climat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Poisson -->
+
+    <owl:Class rdf:about="#Poisson">
+        <rdfs:label xml:lang="fr">poisson</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Faune"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Promenade -->
+
+    <owl:Class rdf:about="#Promenade">
+        <rdfs:label>cheminement</rdfs:label>
+        <rdfs:label>balade</rdfs:label>
+        <rdfs:label>marche &#224; pied</rdfs:label>
+        <rdfs:label xml:lang="fr">promenade</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Marche"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Promeneur -->
+
+    <owl:Class rdf:about="#Promeneur">
+        <rdfs:label xml:lang="fr">promeneur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Humain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#P&#233;lerinage -->
+
+    <owl:Class rdf:about="#P&#233;lerinage">
+        <rdfs:label xml:lang="fr">p&#233;lerinage</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Voyage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Randonnee -->
+
+    <owl:Class rdf:about="#Randonnee">
+        <rdfs:label xml:lang="fr">randonn&#233;e</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Marche"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Randonneur -->
+
+    <owl:Class rdf:about="#Randonneur">
+        <rdfs:label xml:lang="fr">randonneur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Humain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Raquette -->
+
+    <owl:Class rdf:about="#Raquette">
+        <rdfs:label xml:lang="fr">raquette</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Sport_de_Montagne"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Raquettiste -->
+
+    <owl:Class rdf:about="#Raquettiste">
+        <rdfs:label xml:lang="fr">raquettiste</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Humain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Refuge -->
+
+    <owl:Class rdf:about="#Refuge">
+        <rdfs:label>abri</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Maison"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Reptile -->
+
+    <owl:Class rdf:about="#Reptile">
+        <rdfs:label xml:lang="fr">reptile</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Faune"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Rocade -->
+
+    <owl:Class rdf:about="#Rocade">
+        <rdfs:label xml:lang="fr">rocade</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Route"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Route -->
+
+    <owl:Class rdf:about="#Route">
+        <rdfs:label xml:lang="fr">route</rdfs:label>
+        <rdfs:label>voierie</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Lieu_Non_Naturel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Rue -->
+
+    <owl:Class rdf:about="#Rue">
+        <rdfs:label>avenue</rdfs:label>
+        <rdfs:label>boulevard</rdfs:label>
+        <rdfs:label>chauss&#233;e</rdfs:label>
+        <rdfs:label>all&#233;e</rdfs:label>
+        <rdfs:label xml:lang="fr">rue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Route"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Ruine -->
+
+    <owl:Class rdf:about="#Ruine">
+        <rdfs:label xml:lang="fr">ruine</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Monument_Historique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#R&#233;gion -->
+
+    <owl:Class rdf:about="#R&#233;gion">
+        <rdfs:label>province</rdfs:label>
+        <rdfs:label xml:lang="fr">r&#233;gion</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Lieu_Administratif"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#R&#233;gion_administrative -->
+
+    <owl:Class rdf:about="#R&#233;gion_administrative">
+        <rdfs:label xml:lang="fr"
+            >r&#233;gion administrative</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#R&#233;gion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#R&#233;gion_culturelle -->
+
+    <owl:Class rdf:about="#R&#233;gion_culturelle">
+        <rdfs:label xml:lang="fr"
+            >r&#233;gion culturelle</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#R&#233;gion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Sentier -->
+
+    <owl:Class rdf:about="#Sentier">
+        <rdfs:label>sente</rdfs:label>
+        <rdfs:label xml:lang="fr">sentier</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Route"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Ski -->
+
+    <owl:Class rdf:about="#Ski">
+        <rdfs:label xml:lang="fr">ski</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Sport_de_Montagne"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Ski_Alpin -->
+
+    <owl:Class rdf:about="#Ski_Alpin">
+        <rdfs:label xml:lang="fr">ski alpin</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Ski"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Ski_de_fond -->
+
+    <owl:Class rdf:about="#Ski_de_fond">
+        <rdfs:label xml:lang="fr">ski de fond</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Ski"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Skieur -->
+
+    <owl:Class rdf:about="#Skieur">
+        <rdfs:label xml:lang="fr">skieur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Humain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Soleil -->
+
+    <owl:Class rdf:about="#Soleil">
+        <rdfs:label>ensoleill&#233;</rdfs:label>
+        <rdfs:label>chaleur</rdfs:label>
+        <rdfs:label xml:lang="fr">soleil</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Climat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Sommet -->
+
+    <owl:Class rdf:about="#Sommet">
+        <rdfs:label xml:lang="fr">sommet</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#&#233;l&#233;ment_Montagneux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Sport -->
+
+    <owl:Class rdf:about="#Sport">
+        <rdfs:label
+            >activit&#233; sportive</rdfs:label>
+        <rdfs:label xml:lang="fr">sport</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Activit&#233;"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Sport_Aquatique -->
+
+    <owl:Class rdf:about="#Sport_Aquatique">
+        <rdfs:label>sport d&#39;eau</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Sport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Sport_de_Montagne -->
+
+    <owl:Class rdf:about="#Sport_de_Montagne">
+        <rdfs:label xml:lang="fr"
+            >sport de montagne</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Sport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Station_Baln&#233;aire -->
+
+    <owl:Class rdf:about="#Station_Baln&#233;aire">
+        <rdfs:label>baln&#233;oth&#233;rapie</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >station baln&#233;aire</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Ville"/>
+        <rdfs:subClassOf rdf:resource="#lieu_Aquatique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Station_de_ski -->
+
+    <owl:Class rdf:about="#Station_de_ski">
+        <rdfs:label xml:lang="fr">station de ski</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Ville"/>
+        <rdfs:subClassOf rdf:resource="#lieu_montagneux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Temple -->
+
+    <owl:Class rdf:about="#Temple">
+        <rdfs:label>sanctuaire</rdfs:label>
+        <rdfs:label xml:lang="fr">temple</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Monument_Religieux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Tombeau -->
+
+    <owl:Class rdf:about="#Tombeau">
+        <rdfs:label xml:lang="fr">tombeau</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Monument_Historique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Tourisme -->
+
+    <owl:Class rdf:about="#Tourisme">
+        <rdfs:label xml:lang="fr">tourisme</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Activit&#233;"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Tourisme_Culturel -->
+
+    <owl:Class rdf:about="#Tourisme_Culturel">
+        <rdfs:label>culture</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >tourisme culturel</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Tourisme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Tourisme_Gastronomique -->
+
+    <owl:Class rdf:about="#Tourisme_Gastronomique">
+        <rdfs:label>gastronomie</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >tourisme gastronomique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Tourisme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Tourisme_Religieux -->
+
+    <owl:Class rdf:about="#Tourisme_Religieux">
+        <rdfs:label>religion</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >tournisme religieux</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Tourisme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Tourisme_Scientifique -->
+
+    <owl:Class rdf:about="#Tourisme_Scientifique">
+        <rdfs:label>science</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >tourisme scientifique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Tourisme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Treck -->
+
+    <owl:Class rdf:about="#Treck">
+        <rdfs:label xml:lang="fr">treck</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Marche"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Vall&#233;e -->
+
+    <owl:Class rdf:about="#Vall&#233;e">
+        <rdfs:label xml:lang="fr">vall&#233;e</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#&#233;l&#233;ment_Montagneux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Vent -->
+
+    <owl:Class rdf:about="#Vent">
+        <rdfs:label xml:lang="fr">vent</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Climat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Village -->
+
+    <owl:Class rdf:about="#Village">
+        <rdfs:label>lieu-dit</rdfs:label>
+        <rdfs:label>hameau</rdfs:label>
+        <rdfs:label>bourgade</rdfs:label>
+        <rdfs:label>bourg</rdfs:label>
+        <rdfs:label>localit&#233;</rdfs:label>
+        <rdfs:label xml:lang="fr">village</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Lieu_Administratif"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Ville -->
+
+    <owl:Class rdf:about="#Ville">
+        <rdfs:label>agglom&#233;ration</rdfs:label>
+        <rdfs:label>commune</rdfs:label>
+        <rdfs:label>m&#233;tropole</rdfs:label>
+        <rdfs:label>cit&#233;</rdfs:label>
+        <rdfs:label xml:lang="fr">ville</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Lieu_Administratif"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Volcan -->
+
+    <owl:Class rdf:about="#Volcan">
+        <rdfs:label xml:lang="fr">volcan</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#&#233;l&#233;ment_Montagneux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Voyage -->
+
+    <owl:Class rdf:about="#Voyage">
+        <rdfs:label>vir&#233;e</rdfs:label>
+        <rdfs:label>excursion</rdfs:label>
+        <rdfs:label>exp&#233;dition</rdfs:label>
+        <rdfs:label>p&#233;riple</rdfs:label>
+        <rdfs:label xml:lang="fr">voyage</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Activit&#233;"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#arbre -->
+
+    <owl:Class rdf:about="#arbre">
+        <rdfs:label xml:lang="fr">arbre</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Flore"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#cours_d&#39;eau -->
+
+    <owl:Class rdf:about="#cours_d&#39;eau">
+        <rdfs:label>ravine</rdfs:label>
+        <rdfs:label>ruisseau</rdfs:label>
+        <rdfs:label>ruisselet</rdfs:label>
+        <rdfs:label>ru</rdfs:label>
+        <rdfs:label>gave</rdfs:label>
+        <rdfs:label>torrent</rdfs:label>
+        <rdfs:label>oued</rdfs:label>
+        <rdfs:label>fleuve</rdfs:label>
+        <rdfs:label xml:lang="fr">rivi&#232;re</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#lieu_Aquatique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#fleur -->
+
+    <owl:Class rdf:about="#fleur">
+        <rdfs:label xml:lang="fr">fleur</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Flore"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#gite -->
+
+    <owl:Class rdf:about="#gite">
+        <rdfs:label xml:lang="fr">gite</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Maison"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#lieu_Aquatique -->
+
+    <owl:Class rdf:about="#lieu_Aquatique">
+        <rdfs:label xml:lang="fr"
+            >&#233;l&#233;ment aquatique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Lieu_Naturel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#lieu_Terrestre -->
+
+    <owl:Class rdf:about="#lieu_Terrestre">
+        <rdfs:label xml:lang="fr"
+            >&#233;l&#233;ment terrestre</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Lieu_Naturel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#lieu_montagneux -->
+
+    <owl:Class rdf:about="#lieu_montagneux">
+        <rdfs:label xml:lang="fr">montagne</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#lieu_Terrestre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#&#233;glise -->
+
+    <owl:Class rdf:about="#&#233;glise">
+        <rdfs:label xml:lang="fr">&#233;glise</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#Monument_Religieux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#&#233;l&#233;ment_Montagneux -->
+
+    <owl:Class rdf:about="#&#233;l&#233;ment_Montagneux">
+        <rdfs:subClassOf rdf:resource="#lieu_montagneux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#&#238;le -->
+
+    <owl:Class rdf:about="#&#238;le">
+        <rdfs:label xml:lang="fr">&#238;le</rdfs:label>
+        <rdfs:subClassOf rdf:resource="#lieu_Aquatique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Ain -->
+
+    <owl:Thing rdf:about="#Ain">
+        <rdf:type rdf:resource="#D&#233;partement"/>
+        <rdfs:label xml:lang="fr">Ain</rdfs:label>
+        <appartient_a_la_region rdf:resource="#Rh&#244;ne-Alpes"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Allemagne -->
+
+    <owl:Thing rdf:about="#Allemagne">
+        <rdf:type rdf:resource="#Pays"/>
+        <rdfs:comment xml:lang="fr">Allemagne</rdfs:comment>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Alpes -->
+
+    <owl:Thing rdf:about="#Alpes">
+        <rdf:type rdf:resource="#Massif_Montagneux"/>
+        <rdfs:label xml:lang="fr">Alpes</rdfs:label>
+        <rdfs:label>Alpes du Sud</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Ain"/>
+        <Est_contenu_dans rdf:resource="#Alpes-Maritimes"/>
+        <Est_contenu_dans rdf:resource="#Autriche"/>
+        <Est_contenu_dans rdf:resource="#France"/>
+        <Est_contenu_dans rdf:resource="#Haute-Savoie"/>
+        <Est_contenu_dans rdf:resource="#Hautes-Alpes"/>
+        <Est_contenu_dans rdf:resource="#Is&#232;re"/>
+        <Est_contenu_dans rdf:resource="#Italie"/>
+        <Est_contenu_dans rdf:resource="#Provence-Alpes-C&#244;te_d&#39;Azur"/>
+        <Est_contenu_dans rdf:resource="#Savoie"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Alpes-Maritimes -->
+
+    <owl:Thing rdf:about="#Alpes-Maritimes">
+        <rdf:type rdf:resource="#D&#233;partement"/>
+        <rdfs:label xml:lang="fr">Alpes Maritimes</rdfs:label>
+        <appartient_a_la_region rdf:resource="#Rh&#244;ne-Alpes"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Alpes-de-Haute-Provence -->
+
+    <owl:Thing rdf:about="#Alpes-de-Haute-Provence">
+        <rdf:type rdf:resource="#D&#233;partement"/>
+        <rdfs:comment
+            >Alpes de Haute Provence</rdfs:comment>
+        <appartient_a_la_region rdf:resource="#Rh&#244;ne-Alpes"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Alpes_de_Lingen -->
+
+    <owl:Thing rdf:about="#Alpes_de_Lingen">
+        <rdf:type rdf:resource="#Massif_Montagneux"/>
+        <rdfs:label xml:lang="fr">Alpes de Lingen</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Finlande"/>
+        <Est_contenu_dans rdf:resource="#Norv&#232;ge"/>
+        <Est_contenu_dans rdf:resource="#Su&#232;de"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Aquitaine -->
+
+    <Région_administrative rdf:about="#Aquitaine">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Aquitaine</rdfs:label>
+        <appartient_a_un_pays rdf:resource="#France"/>
+    </Région_administrative>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Argel&#232;s-Gazost -->
+
+    <Ville rdf:about="#Argel&#232;s-Gazost">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">argel&#232;s-Gazost</rdfs:label>
+        <appartient_au_departement rdf:resource="#Hautes-Pyr&#233;n&#233;es"/>
+    </Ville>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Ari&#232;ge -->
+
+    <owl:Thing rdf:about="#Ari&#232;ge">
+        <rdf:type rdf:resource="#D&#233;partement"/>
+        <rdfs:label xml:lang="fr">Ari&#232;ge</rdfs:label>
+        <appartient_a_la_region rdf:resource="#Midi-Pyr&#233;n&#233;es"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Armorique -->
+
+    <Région_culturelle rdf:about="#Armorique">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">armorique</rdfs:label>
+        <appartient_a_la_region_culturelle rdf:resource="#Basse-Normandie"/>
+        <appartient_a_la_region_culturelle rdf:resource="#Bretagne"/>
+        <appartient_a_la_region_culturelle rdf:resource="#Haute-Normandie"/>
+    </Région_culturelle>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Arthur&#39;s_Seat -->
+
+    <Volcan rdf:about="#Arthur&#39;s_Seat">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">arthur&#39;s Seat</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Royaume-Uni"/>
+    </Volcan>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Asie -->
+
+    <owl:Thing rdf:about="#Asie">
+        <rdf:type rdf:resource="#Continent"/>
+        <rdfs:label xml:lang="fr">asie</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Askja -->
+
+    <owl:Thing rdf:about="#Askja">
+        <rdf:type rdf:resource="#Volcan"/>
+        <rdfs:label xml:lang="fr">askja</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Islande"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Autriche -->
+
+    <owl:Thing rdf:about="#Autriche">
+        <rdf:type rdf:resource="#Pays"/>
+        <rdfs:label xml:lang="fr">autriche</rdfs:label>
+        <appartient_a_un_continent rdf:resource="#Europe"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Auvergne -->
+
+    <owl:Thing rdf:about="#Auvergne">
+        <rdf:type rdf:resource="#R&#233;gion_administrative"/>
+        <rdfs:label xml:lang="fr">auvergne</rdfs:label>
+        <appartient_a_un_pays rdf:resource="#France"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Bagn&#232;res-de-Bigorre -->
+
+    <owl:Thing rdf:about="#Bagn&#232;res-de-Bigorre">
+        <rdf:type rdf:resource="#Ville"/>
+        <rdfs:label xml:lang="fr"
+            >bagn&#232;res de bigorre</rdfs:label>
+        <appartient_au_departement rdf:resource="#Hautes-Pyr&#233;n&#233;es"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Barousse -->
+
+    <Région_culturelle rdf:about="#Barousse">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Barousse</rdfs:label>
+        <appartient_a_la_region_culturelle rdf:resource="#Hautes-Pyr&#233;n&#233;es"/>
+    </Région_culturelle>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Barrage_des_Bouillouses -->
+
+    <Lac rdf:about="#Barrage_des_Bouillouses">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label>Bouillouses</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >barrage_des Bouillousses</rdfs:label>
+        <Est_situé_géographiquement_dans rdf:resource="#Pyr&#233;n&#233;es"/>
+        <Est_contenu_dans rdf:resource="#Pyr&#233;n&#233;es-Orientales"/>
+    </Lac>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Basse-Normandie -->
+
+    <Région_administrative rdf:about="#Basse-Normandie">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label>Normandie</rdfs:label>
+        <rdfs:label xml:lang="fr">basse normandie</rdfs:label>
+        <appartient_a_un_pays rdf:resource="#France"/>
+    </Région_administrative>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Beaufort-sur-Doron -->
+
+    <owl:Thing rdf:about="#Beaufort-sur-Doron">
+        <rdf:type rdf:resource="#Ville"/>
+        <rdfs:label xml:lang="fr"
+            >beaufort sur doron</rdfs:label>
+        <appartient_au_departement rdf:resource="#Savoie"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Beaufortain -->
+
+    <Région_culturelle rdf:about="#Beaufortain">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">beaufortain</rdfs:label>
+        <appartient_a_la_region_culturelle rdf:resource="#Savoie"/>
+    </Région_culturelle>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Beerenberg -->
+
+    <Volcan rdf:about="#Beerenberg">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">beerenberg</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Norv&#232;ge"/>
+    </Volcan>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Bigorre -->
+
+    <Région_culturelle rdf:about="#Bigorre">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">bigorre</rdfs:label>
+        <appartient_a_la_region_culturelle rdf:resource="#Hautes-Pyr&#233;n&#233;es"/>
+    </Région_culturelle>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Bretagne -->
+
+    <Région_administrative rdf:about="#Bretagne">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">bretagne</rdfs:label>
+        <appartient_a_un_pays rdf:resource="#France"/>
+    </Région_administrative>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Brian&#231;on -->
+
+    <owl:Thing rdf:about="#Brian&#231;on">
+        <rdf:type rdf:resource="#Ville"/>
+        <rdfs:label xml:lang="fr">brian&#231;on</rdfs:label>
+        <appartient_au_departement rdf:resource="#Hautes-Alpes"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Calvados -->
+
+    <owl:Thing rdf:about="#Calvados">
+        <rdf:type rdf:resource="#D&#233;partement"/>
+        <rdfs:label xml:lang="fr">calvados</rdfs:label>
+        <appartient_a_la_region rdf:resource="#Basse-Normandie"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Chamonix -->
+
+    <owl:Thing rdf:about="#Chamonix">
+        <rdf:type rdf:resource="#Station_de_ski"/>
+        <rdfs:label xml:lang="fr">chamonix</rdfs:label>
+        <rdfs:comment
+            >Chamonix-Mont-Blanc</rdfs:comment>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Chauss&#233;e_des_G&#233;ants -->
+
+    <owl:Thing rdf:about="#Chauss&#233;e_des_G&#233;ants">
+        <rdf:type rdf:resource="#Volcan"/>
+        <rdfs:label xml:lang="fr"
+            >chauss&#233;e des G&#233;ants</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Royaume-Uni"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Cirque_de_Gavarnie -->
+
+    <owl:Thing rdf:about="#Cirque_de_Gavarnie">
+        <rdf:type rdf:resource="#Cirque"/>
+        <rdfs:label xml:lang="fr"
+            >cirque de gavarnie</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Gavarnie"/>
+        <appartient_à rdf:resource="#Pyr&#233;n&#233;es"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Clermont-Ferrand -->
+
+    <Ville rdf:about="#Clermont-Ferrand">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr"
+            >clermont ferrand</rdfs:label>
+        <appartient_au_departement rdf:resource="#Puy-de-D&#244;me"/>
+    </Ville>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#C&#244;te_Fleurie -->
+
+    <Côte rdf:about="#C&#244;te_Fleurie">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">c&#244;te fleurie</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Basse-Normandie"/>
+        <Est_contenu_dans rdf:resource="#Haute-Normandie"/>
+    </Côte>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#C&#244;te_d&#39;Alb&#226;tre -->
+
+    <owl:Thing rdf:about="#C&#244;te_d&#39;Alb&#226;tre">
+        <rdf:type rdf:resource="#C&#244;te"/>
+        <rdfs:label xml:lang="fr">c&#244;te d&#39;Albatre</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Haute-Normandie"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#C&#244;te_de_Nacre -->
+
+    <Côte rdf:about="#C&#244;te_de_Nacre">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">C&#244;te de Nacre</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Basse-Normandie"/>
+        <Est_contenu_dans rdf:resource="#Haute-Normandie"/>
+    </Côte>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Deauville -->
+
+    <Station_Balnéaire rdf:about="#Deauville">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Deauville</rdfs:label>
+        <appartient_au_departement rdf:resource="#Basse-Normandie"/>
+    </Station_Balnéaire>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Dordogne -->
+
+    <cours_d:eau rdf:about="#Dordogne">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Dordogne</rdfs:label>
+        <Est_contenu_dans rdf:resource="#France"/>
+    </cours_d:eau>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Doubs -->
+
+    <Département rdf:about="#Doubs">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Doubs</rdfs:label>
+        <appartient_a_la_region rdf:resource="#Franche-Comt&#233;"/>
+    </Département>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Eifel -->
+
+    <Volcan rdf:about="#Eifel">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Eifel</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Allemagne"/>
+    </Volcan>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Espagne -->
+
+    <Pays rdf:about="#Espagne">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Espagne</rdfs:label>
+        <appartient_a_un_continent rdf:resource="#Europe"/>
+    </Pays>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Estanys_de_Baiau -->
+
+    <Lac rdf:about="#Estanys_de_Baiau">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label>Baiau</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Estanys de baiau</rdfs:label>
+        <Est_situé_géographiquement_dans rdf:resource="#Pyr&#233;n&#233;es"/>
+    </Lac>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Etang_d&#39;Arbu -->
+
+    <Lac rdf:about="#Etang_d&#39;Arbu">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label>Arbu</rdfs:label>
+        <rdfs:label xml:lang="fr">etang d&#39;arbu</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Ari&#232;ge"/>
+        <Est_situé_géographiquement_dans rdf:resource="#Pyr&#233;n&#233;es"/>
+    </Lac>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Etang_de_Bethmale -->
+
+    <owl:Thing rdf:about="#Etang_de_Bethmale">
+        <rdf:type rdf:resource="#Lac"/>
+        <rdfs:label>Bethmale</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >etang de bethmale</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Ari&#232;ge"/>
+        <Est_situé_géographiquement_dans rdf:resource="#Pyr&#233;n&#233;es"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Etang_de_Lers -->
+
+    <Lac rdf:about="#Etang_de_Lers">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label>Lers</rdfs:label>
+        <rdfs:label xml:lang="fr">etang de lers</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Ari&#232;ge"/>
+        <Est_situé_géographiquement_dans rdf:resource="#Pyr&#233;n&#233;es"/>
+    </Lac>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Etang_de_Rabassoles -->
+
+    <owl:Thing rdf:about="#Etang_de_Rabassoles">
+        <rdf:type rdf:resource="#Lac"/>
+        <rdfs:label>Rabassoles</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >etang de rabassoles</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Ari&#232;ge"/>
+        <Est_situé_géographiquement_dans rdf:resource="#Pyr&#233;n&#233;es"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Etang_de_la_Gardelle -->
+
+    <Lac rdf:about="#Etang_de_la_Gardelle">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label>Gardelle</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >etang de la gardelle</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Ari&#232;ge"/>
+        <Est_situé_géographiquement_dans rdf:resource="#Pyr&#233;n&#233;es"/>
+    </Lac>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Etang_des_truites -->
+
+    <Lac rdf:about="#Etang_des_truites">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr"
+            >etang des truites</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Ari&#232;ge"/>
+        <Est_situé_géographiquement_dans rdf:resource="#Pyr&#233;n&#233;es"/>
+    </Lac>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Etna -->
+
+    <Volcan rdf:about="#Etna">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">etna</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Italie"/>
+    </Volcan>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Eure -->
+
+    <owl:Thing rdf:about="#Eure">
+        <rdf:type rdf:resource="#D&#233;partement"/>
+        <rdfs:label xml:lang="fr">eure</rdfs:label>
+        <appartient_a_la_region rdf:resource="#Haute-Normandie"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Europe -->
+
+    <owl:Thing rdf:about="#Europe">
+        <rdf:type rdf:resource="#Continent"/>
+        <rdfs:label xml:lang="fr">europe</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Finlande -->
+
+    <Pays rdf:about="#Finlande">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">finlande</rdfs:label>
+        <appartient_a_un_continent rdf:resource="#Europe"/>
+    </Pays>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#France -->
+
+    <Pays rdf:about="#France">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">france</rdfs:label>
+        <appartient_a_un_continent rdf:resource="#Europe"/>
+    </Pays>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Franche-Comt&#233; -->
+
+    <Région_administrative rdf:about="#Franche-Comt&#233;">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">franche-comt&#233;</rdfs:label>
+        <appartient_a_un_pays rdf:resource="#France"/>
+    </Région_administrative>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Gavarnie -->
+
+    <Ville rdf:about="#Gavarnie">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">gavarnie</rdfs:label>
+        <appartient_au_departement rdf:resource="#Hautes-Pyr&#233;n&#233;es"/>
+    </Ville>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Gers -->
+
+    <Département rdf:about="#Gers">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">gers</rdfs:label>
+        <appartient_a_la_region rdf:resource="#Midi-Pyr&#233;n&#233;es"/>
+    </Département>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier_Blanc -->
+
+    <owl:Thing rdf:about="#Glacier_Blanc">
+        <rdf:type rdf:resource="#Glacier"/>
+        <rdfs:label xml:lang="fr">Glacier Blanc</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+        <Est_contenu_dans rdf:resource="#France"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier_d&#39;Aletsch -->
+
+    <owl:Thing rdf:about="#Glacier_d&#39;Aletsch">
+        <rdf:type rdf:resource="#Glacier"/>
+        <rdfs:label>Aletsch</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Glacier D&#39;Aletsch</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+        <Est_contenu_dans rdf:resource="#Suisse"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier_d&#39;Argenti&#232;re -->
+
+    <owl:Thing rdf:about="#Glacier_d&#39;Argenti&#232;re">
+        <rdf:type rdf:resource="#Glacier"/>
+        <rdfs:label>Argenti&#232;re</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Glacier d&#39;argenti&#232;re</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+        <Est_contenu_dans rdf:resource="#France"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier_d&#39;Arsine -->
+
+    <owl:Thing rdf:about="#Glacier_d&#39;Arsine">
+        <rdf:type rdf:resource="#Glacier"/>
+        <rdfs:label>Arsine</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Glacier d&#39;Arsine</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+        <Est_contenu_dans rdf:resource="#France"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier_d&#39;Otemma -->
+
+    <Glacier rdf:about="#Glacier_d&#39;Otemma">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label>Otemma</rdfs:label>
+        <rdfs:label xml:lang="fr"
+            >Glacier d&#39;Otemma</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+        <Est_contenu_dans rdf:resource="#Suisse"/>
+    </Glacier>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier_de_Crupillouse -->
+
+    <Glacier rdf:about="#Glacier_de_Crupillouse">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label>Crupillouse</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+        <Est_contenu_dans rdf:resource="#France"/>
+    </Glacier>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier_de_Fee -->
+
+    <owl:Thing rdf:about="#Glacier_de_Fee">
+        <rdf:type rdf:resource="#Glacier"/>
+        <rdfs:label xml:lang="fr">Glacier de Fee</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+        <Est_contenu_dans rdf:resource="#Suisse"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier_de_Freydane -->
+
+    <owl:Thing rdf:about="#Glacier_de_Freydane">
+        <rdf:type rdf:resource="#Glacier"/>
+        <rdfs:label>Freydane</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+        <Est_contenu_dans rdf:resource="#France"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier_de_Gauli -->
+
+    <owl:Thing rdf:about="#Glacier_de_Gauli">
+        <rdf:type rdf:resource="#Glacier"/>
+        <rdfs:label>Gauli</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+        <Est_contenu_dans rdf:resource="#Suisse"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier_de_Laurichard -->
+
+    <Glacier rdf:about="#Glacier_de_Laurichard">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label>Laurichard</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+        <Est_contenu_dans rdf:resource="#France"/>
+    </Glacier>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier_de_Pr&#233;_de_Bar -->
+
+    <owl:Thing rdf:about="#Glacier_de_Pr&#233;_de_Bar">
+        <rdf:type rdf:resource="#Glacier"/>
+        <rdfs:label>Pr&#233; de Bar</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+        <Est_contenu_dans rdf:resource="#Italie"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier_de_Taconnaz -->
+
+    <owl:Thing rdf:about="#Glacier_de_Taconnaz">
+        <rdf:type rdf:resource="#Glacier"/>
+        <rdfs:label>Taconnaz</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+        <Est_contenu_dans rdf:resource="#France"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier_de_Tourtemagne -->
+
+    <owl:Thing rdf:about="#Glacier_de_Tourtemagne">
+        <rdf:type rdf:resource="#Glacier"/>
+        <rdfs:label>Tourtemagne</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+        <Est_contenu_dans rdf:resource="#Suisse"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier_de_Verraz -->
+
+    <Glacier rdf:about="#Glacier_de_Verraz">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label>Verraz</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+        <Est_contenu_dans rdf:resource="#Italie"/>
+    </Glacier>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier_de_l&#39;Aup -->
+
+    <Glacier rdf:about="#Glacier_de_l&#39;Aup">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label>Aup</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+        <Est_contenu_dans rdf:resource="#France"/>
+    </Glacier>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier_de_l&#39;Oberaar -->
+
+    <owl:Thing rdf:about="#Glacier_de_l&#39;Oberaar">
+        <rdf:type rdf:resource="#Glacier"/>
+        <rdfs:label>Oberaar</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+        <Est_contenu_dans rdf:resource="#Suisse"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier_de_la_Brenva -->
+
+    <owl:Thing rdf:about="#Glacier_de_la_Brenva">
+        <rdf:type rdf:resource="#Glacier"/>
+        <rdfs:label>Brenva</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+        <Est_contenu_dans rdf:resource="#Italie"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier_de_la_Vanoise -->
+
+    <owl:Thing rdf:about="#Glacier_de_la_Vanoise">
+        <rdf:type rdf:resource="#Glacier"/>
+        <rdfs:label>Vanoise</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+        <Est_contenu_dans rdf:resource="#France"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier_des_Bossons -->
+
+    <Glacier rdf:about="#Glacier_des_Bossons">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label>Bossons</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+        <Est_contenu_dans rdf:resource="#France"/>
+    </Glacier>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier_des_Grandes_Murailles -->
+
+    <owl:Thing rdf:about="#Glacier_des_Grandes_Murailles">
+        <rdf:type rdf:resource="#Glacier"/>
+        <rdfs:label xml:lang="fr"
+            >Glacier des grandes murailles</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+        <Est_contenu_dans rdf:resource="#Italie"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier_du_Gorner -->
+
+    <owl:Thing rdf:about="#Glacier_du_Gorner">
+        <rdf:type rdf:resource="#Glacier"/>
+        <rdfs:label>Gorner</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+        <Est_contenu_dans rdf:resource="#Suisse"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier_du_Miage -->
+
+    <Glacier rdf:about="#Glacier_du_Miage">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label>Miage</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+        <Est_contenu_dans rdf:resource="#Italie"/>
+    </Glacier>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier_du_Tour -->
+
+    <Glacier rdf:about="#Glacier_du_Tour">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Glacier du tour</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+        <Est_contenu_dans rdf:resource="#France"/>
+    </Glacier>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Glacier_du_Tsa_de_Tsan -->
+
+    <owl:Thing rdf:about="#Glacier_du_Tsa_de_Tsan">
+        <rdf:type rdf:resource="#Glacier"/>
+        <rdfs:label>Tsa de Tsan</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+        <Est_contenu_dans rdf:resource="#Italie"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Gr&#232;ce -->
+
+    <Pays rdf:about="#Gr&#232;ce">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">gr&#232;ce</rdfs:label>
+    </Pays>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Gu&#233;ry -->
+
+    <owl:Thing rdf:about="#Gu&#233;ry">
+        <rdf:type rdf:resource="#Station_de_ski"/>
+        <rdfs:label xml:lang="fr">gu&#233;ry</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Haute-Garonne -->
+
+    <Département rdf:about="#Haute-Garonne">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Haute Garonne</rdfs:label>
+        <appartient_a_la_region rdf:resource="#Midi-Pyr&#233;n&#233;es"/>
+    </Département>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Haute-Normandie -->
+
+    <Région_administrative rdf:about="#Haute-Normandie">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Haute normandie</rdfs:label>
+        <rdfs:label>Normandie</rdfs:label>
+        <appartient_a_un_pays rdf:resource="#France"/>
+    </Région_administrative>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Haute-Savoie -->
+
+    <Département rdf:about="#Haute-Savoie">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Haute savoie</rdfs:label>
+        <appartient_a_la_region rdf:resource="#Rh&#244;ne-Alpes"/>
+    </Département>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Hautes-Alpes -->
+
+    <Département rdf:about="#Hautes-Alpes">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Hautes Alpes</rdfs:label>
+        <appartient_a_la_region rdf:resource="#Provence-Alpes-C&#244;te_d&#39;Azur"/>
+    </Département>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Hautes-Pyr&#233;n&#233;es -->
+
+    <owl:Thing rdf:about="#Hautes-Pyr&#233;n&#233;es">
+        <rdf:type rdf:resource="#D&#233;partement"/>
+        <rdfs:label xml:lang="fr"
+            >Hautes py&#233;r&#233;n&#233;es</rdfs:label>
+        <appartient_a_la_region rdf:resource="#Midi-Pyr&#233;n&#233;es"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Hekla -->
+
+    <owl:Thing rdf:about="#Hekla">
+        <rdf:type rdf:resource="#Volcan"/>
+        <rdfs:label xml:lang="fr">Hekla</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Islande"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Inde -->
+
+    <owl:Thing rdf:about="#Inde">
+        <rdf:type rdf:resource="#Pays"/>
+        <rdfs:label xml:lang="fr">Inde</rdfs:label>
+        <appartient_a_un_continent rdf:resource="#Asie"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Islande -->
+
+    <owl:Thing rdf:about="#Islande">
+        <rdf:type rdf:resource="#Pays"/>
+        <rdfs:label xml:lang="fr">Islande</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Is&#232;re -->
+
+    <owl:Thing rdf:about="#Is&#232;re">
+        <rdf:type rdf:resource="#D&#233;partement"/>
+        <rdfs:label xml:lang="fr">Is&#232;re</rdfs:label>
+        <appartient_a_la_region rdf:resource="#Rh&#244;ne-Alpes"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Italie -->
+
+    <Pays rdf:about="#Italie">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Italie</rdfs:label>
+        <appartient_a_un_continent rdf:resource="#Europe"/>
+    </Pays>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Jura -->
+
+    <Massif_Montagneux rdf:about="#Jura">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Jura</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Doubs"/>
+    </Massif_Montagneux>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Kaiserstuhl -->
+
+    <owl:Thing rdf:about="#Kaiserstuhl">
+        <rdf:type rdf:resource="#Volcan"/>
+        <rdfs:label xml:lang="fr">Kaiserstuhl</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Allemagne"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Lac_Vert -->
+
+    <Lac rdf:about="#Lac_Vert">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Lac Vert</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Hautes-Pyr&#233;n&#233;es"/>
+        <Est_situé_géographiquement_dans rdf:resource="#Pyr&#233;n&#233;es"/>
+    </Lac>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Lac_d&#39;Estaens -->
+
+    <owl:Thing rdf:about="#Lac_d&#39;Estaens">
+        <rdf:type rdf:resource="#Lac"/>
+        <rdfs:label>Estaens</rdfs:label>
+        <Est_situé_géographiquement_dans rdf:resource="#Pyr&#233;n&#233;es"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Lac_d&#39;Estom -->
+
+    <Lac rdf:about="#Lac_d&#39;Estom">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:comment>Estom</rdfs:comment>
+        <Est_contenu_dans rdf:resource="#Hautes-Pyr&#233;n&#233;es"/>
+        <Est_situé_géographiquement_dans rdf:resource="#Pyr&#233;n&#233;es"/>
+    </Lac>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Lac_d&#39;Oncet -->
+
+    <owl:Thing rdf:about="#Lac_d&#39;Oncet">
+        <rdf:type rdf:resource="#Lac"/>
+        <rdfs:comment>Oncet</rdfs:comment>
+        <Est_contenu_dans rdf:resource="#Hautes-Pyr&#233;n&#233;es"/>
+        <Est_situé_géographiquement_dans rdf:resource="#Pyr&#233;n&#233;es"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Lac_d&#39;O&#244; -->
+
+    <owl:Thing rdf:about="#Lac_d&#39;O&#244;">
+        <rdf:type rdf:resource="#Lac"/>
+        <rdfs:comment>Oo</rdfs:comment>
+        <rdfs:comment>O&#244;</rdfs:comment>
+        <Est_contenu_dans rdf:resource="#Haute-Garonne"/>
+        <Est_situé_géographiquement_dans rdf:resource="#Pyr&#233;n&#233;es"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Lac_de_Binaros -->
+
+    <Lac rdf:about="#Lac_de_Binaros">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:comment>Binaros</rdfs:comment>
+        <Est_contenu_dans rdf:resource="#Hautes-Pyr&#233;n&#233;es"/>
+        <Est_situé_géographiquement_dans rdf:resource="#Pyr&#233;n&#233;es"/>
+    </Lac>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Lac_de_Gaube -->
+
+    <owl:Thing rdf:about="#Lac_de_Gaube">
+        <rdf:type rdf:resource="#Lac"/>
+        <rdfs:comment>Gaube</rdfs:comment>
+        <Est_contenu_dans rdf:resource="#Hautes-Pyr&#233;n&#233;es"/>
+        <Est_situé_géographiquement_dans rdf:resource="#Pyr&#233;n&#233;es"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Lac_de_Payolle -->
+
+    <owl:Thing rdf:about="#Lac_de_Payolle">
+        <rdf:type rdf:resource="#Lac"/>
+        <rdfs:comment>Payolle</rdfs:comment>
+        <Est_contenu_dans rdf:resource="#Hautes-Pyr&#233;n&#233;es"/>
+        <Est_situé_géographiquement_dans rdf:resource="#Pyr&#233;n&#233;es"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Lac_de_l&#39;Oule -->
+
+    <owl:Thing rdf:about="#Lac_de_l&#39;Oule">
+        <rdf:type rdf:resource="#Lac"/>
+        <rdfs:label xml:lang="fr">Lac de l&#39;Oule</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Hautes-Pyr&#233;n&#233;es"/>
+        <Est_situé_géographiquement_dans rdf:resource="#Pyr&#233;n&#233;es"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Lac_du_Portillon -->
+
+    <Lac rdf:about="#Lac_du_Portillon">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr"
+            >Lac du Portillon</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Haute-Garonne"/>
+        <Est_situé_géographiquement_dans rdf:resource="#Pyr&#233;n&#233;es"/>
+    </Lac>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Langgletscher -->
+
+    <owl:Thing rdf:about="#Langgletscher">
+        <rdf:type rdf:resource="#Glacier"/>
+        <rdfs:label xml:lang="fr">Langgletscher</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+        <Est_contenu_dans rdf:resource="#Suisse"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Languedoc-Roussillon -->
+
+    <owl:Thing rdf:about="#Languedoc-Roussillon">
+        <rdf:type rdf:resource="#R&#233;gion_administrative"/>
+        <rdfs:label xml:lang="fr"
+            >Languedoc Roussillon</rdfs:label>
+        <appartient_a_un_pays rdf:resource="#France"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Loire -->
+
+    <owl:Thing rdf:about="#Loire">
+        <rdf:type rdf:resource="#D&#233;partement"/>
+        <rdfs:label xml:lang="fr">Loire</rdfs:label>
+        <appartient_a_la_region rdf:resource="#Rh&#244;ne-Alpes"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Lourdes -->
+
+    <owl:Thing rdf:about="#Lourdes">
+        <rdf:type rdf:resource="#Ville"/>
+        <rdfs:label xml:lang="fr">Lourdes</rdfs:label>
+        <appartient_au_departement rdf:resource="#Hautes-Pyr&#233;n&#233;es"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Luchon -->
+
+    <owl:Thing rdf:about="#Luchon">
+        <rdf:type rdf:resource="#Ville"/>
+        <rdfs:label xml:lang="fr">Luchon</rdfs:label>
+        <appartient_au_departement rdf:resource="#Haute-Garonne"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Manche -->
+
+    <Département rdf:about="#Manche">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Manche</rdfs:label>
+        <appartient_a_la_region rdf:resource="#Basse-Normandie"/>
+    </Département>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Massif_Central -->
+
+    <owl:Thing rdf:about="#Massif_Central">
+        <rdf:type rdf:resource="#Massif_Montagneux"/>
+        <rdfs:label xml:lang="fr">Massif Central</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Puy-de-D&#244;me"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Maurienne -->
+
+    <Vallée rdf:about="#Maurienne">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Maurienne</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+    </Vallée>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Mer_de_Glace -->
+
+    <Glacier rdf:about="#Mer_de_Glace">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Mer de glace</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+        <Est_contenu_dans rdf:resource="#France"/>
+    </Glacier>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Mercantour -->
+
+    <Région_culturelle rdf:about="#Mercantour">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Mercantour</rdfs:label>
+        <appartient_a_la_region_culturelle rdf:resource="#Alpes-Maritimes"/>
+        <appartient_a_la_region_culturelle rdf:resource="#Alpes-de-Haute-Provence"/>
+    </Région_culturelle>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Midi-Pyr&#233;n&#233;es -->
+
+    <Région_administrative rdf:about="#Midi-Pyr&#233;n&#233;es">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Midi Pyr&#233;n&#233;es</rdfs:label>
+        <appartient_a_un_pays rdf:resource="#France"/>
+    </Région_administrative>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Mont-Dore -->
+
+    <Station_de_ski rdf:about="#Mont-Dore">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Mont Dore</rdfs:label>
+    </Station_de_ski>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Mont_Blanc -->
+
+    <Sommet rdf:about="#Mont_Blanc">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Mont Blanc</rdfs:label>
+        <Est_contenu_dans rdf:resource="#France"/>
+        <Est_contenu_dans rdf:resource="#Haute-Savoie"/>
+        <Est_contenu_dans rdf:resource="#Italie"/>
+        <Est_contenu_dans rdf:resource="#Vall&#233;e_d&#39;Aoste"/>
+    </Sommet>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Mont_d&#39;Or -->
+
+    <Sommet rdf:about="#Mont_d&#39;Or">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Mont d&#39;Or</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Doubs"/>
+    </Sommet>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Montbardon -->
+
+    <Ville rdf:about="#Montbardon">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Montbardon</rdfs:label>
+        <appartient_au_departement rdf:resource="#Gers"/>
+    </Ville>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Montb&#233;liard -->
+
+    <Ville rdf:about="#Montb&#233;liard">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Montb&#233;liard</rdfs:label>
+        <appartient_au_departement rdf:resource="#Doubs"/>
+    </Ville>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Monts_Dore -->
+
+    <owl:Thing rdf:about="#Monts_Dore">
+        <rdf:type rdf:resource="#Mont"/>
+        <rdfs:label xml:lang="fr">Monts Dore</rdfs:label>
+        <appartient_à rdf:resource="#Massif_Central"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#M&#233;tabief -->
+
+    <owl:Thing rdf:about="#M&#233;tabief">
+        <rdf:type rdf:resource="#Station_de_ski"/>
+        <rdfs:label xml:lang="fr">M&#233;tabief</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Nice -->
+
+    <owl:Thing rdf:about="#Nice">
+        <rdf:type rdf:resource="#Ville"/>
+        <rdfs:label xml:lang="fr">Nice</rdfs:label>
+        <appartient_au_departement rdf:resource="#Alpes-Maritimes"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Norv&#232;ge -->
+
+    <owl:Thing rdf:about="#Norv&#232;ge">
+        <rdf:type rdf:resource="#Pays"/>
+        <rdfs:label xml:lang="fr">Norv&#232;ge</rdfs:label>
+        <appartient_a_un_continent rdf:resource="#Europe"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Orne -->
+
+    <owl:Thing rdf:about="#Orne">
+        <rdf:type rdf:resource="#D&#233;partement"/>
+        <rdfs:label xml:lang="fr">Orne</rdfs:label>
+        <appartient_a_la_region rdf:resource="#Basse-Normandie"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Pays_Basque -->
+
+    <Région_culturelle rdf:about="#Pays_Basque">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Pays Basque</rdfs:label>
+        <appartient_a_la_region_culturelle rdf:resource="#Espagne"/>
+        <appartient_a_la_region_culturelle rdf:resource="#France"/>
+        <appartient_a_la_region_culturelle rdf:resource="#Pyr&#233;n&#233;es-Atlantiques"/>
+    </Région_culturelle>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Pays_d&#39;Aure -->
+
+    <owl:Thing rdf:about="#Pays_d&#39;Aure">
+        <rdf:type rdf:resource="#R&#233;gion_culturelle"/>
+        <rdfs:label xml:lang="fr">Pays d&#39;Aure</rdfs:label>
+        <appartient_a_la_region_culturelle rdf:resource="#Hautes-Pyr&#233;n&#233;es"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Pico -->
+
+    <Volcan rdf:about="#Pico">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Pico</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Portugal"/>
+    </Volcan>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Portugal -->
+
+    <Pays rdf:about="#Portugal">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Portugal</rdfs:label>
+    </Pays>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Provence-Alpes-C&#244;te_d&#39;Azur -->
+
+    <owl:Thing rdf:about="#Provence-Alpes-C&#244;te_d&#39;Azur">
+        <rdf:type rdf:resource="#R&#233;gion_administrative"/>
+        <rdfs:label xml:lang="fr"
+            >Provence Alpes C&#244;te d&#39;Azur</rdfs:label>
+        <appartient_a_un_pays rdf:resource="#France"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Puy-de-D&#244;me -->
+
+    <Département rdf:about="#Puy-de-D&#244;me">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label>Puy de D&#244;me</rdfs:label>
+        <appartient_a_la_region rdf:resource="#Auvergne"/>
+    </Département>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Puy_de_C&#244;me -->
+
+    <Volcan rdf:about="#Puy_de_C&#244;me">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Puy de C&#244;me</rdfs:label>
+        <Est_contenu_dans rdf:resource="#France"/>
+    </Volcan>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Puy_de_D&#244;me -->
+
+    <owl:Thing rdf:about="#Puy_de_D&#244;me">
+        <rdf:type rdf:resource="#Volcan"/>
+        <Est_contenu_dans rdf:resource="#France"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Puy_de_Sancy -->
+
+    <owl:Thing rdf:about="#Puy_de_Sancy">
+        <rdf:type rdf:resource="#Volcan"/>
+        <Est_contenu_dans rdf:resource="#France"/>
+        <appartient_à rdf:resource="#Massif_Central"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Puy_de_la_Vache -->
+
+    <Volcan rdf:about="#Puy_de_la_Vache">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <Est_contenu_dans rdf:resource="#France"/>
+    </Volcan>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Pyr&#233;n&#233;es -->
+
+    <Massif_Montagneux rdf:about="#Pyr&#233;n&#233;es">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr">Pyr&#233;n&#233;es</rdfs:label>
+        <Est_contenu_dans rdf:resource="#Ari&#232;ge"/>
+        <Est_contenu_dans rdf:resource="#Haute-Garonne"/>
+        <Est_contenu_dans rdf:resource="#Hautes-Pyr&#233;n&#233;es"/>
+        <Est_contenu_dans rdf:resource="#Pyr&#233;n&#233;es-Atlantiques"/>
+        <Est_contenu_dans rdf:resource="#Pyr&#233;n&#233;es-Orientales"/>
+    </Massif_Montagneux>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Pyr&#233;n&#233;es-Atlantiques -->
+
+    <Département rdf:about="#Pyr&#233;n&#233;es-Atlantiques">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr"
+            >Pyr&#233;n&#233;es atlantiques</rdfs:label>
+        <appartient_a_la_region rdf:resource="#Aquitaine"/>
+    </Département>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Pyr&#233;n&#233;es-Orientales -->
+
+    <Département rdf:about="#Pyr&#233;n&#233;es-Orientales">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="fr"
+            >Pyr&#233;n&#233;es Orientales</rdfs:label>
+        <appartient_a_la_region rdf:resource="#Languedoc-Roussillon"/>
+    </Département>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Queyras -->
+
+    <owl:Thing rdf:about="#Queyras">
+        <rdf:type rdf:resource="#Vall&#233;e"/>
+        <rdfs:label xml:lang="fr">Queyras</rdfs:label>
+        <appartient_à rdf:resource="#Alpes"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Rhin -->
+
+    <cours_d:eau rdf:about="#Rhin">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <Est_contenu_dans rdf:resource="#France"/>
+    </cours_d:eau>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Rh&#244;ne -->
+
+    <cours_d:eau rdf:about="#Rh&#244;ne">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <Est_contenu_dans rdf:resource="#France"/>
+    </cours_d:eau>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Rh&#244;ne-Alpes -->
+
+    <owl:Thing rdf:about="#Rh&#244;ne-Alpes">
+        <rdf:type rdf:resource="#R&#233;gion_administrative"/>
+        <appartient_a_un_pays rdf:resource="#France"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Roanne -->
+
+    <Ville rdf:about="#Roanne">
+        <rdf:type rdf:resource="#Vall&#233;e"/>
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <Est_contenu_dans rdf:resource="#Loire"/>
+    </Ville>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Royaume-Uni -->
+
+    <Pays rdf:about="#Royaume-Uni">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Pays>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Savoie -->
+
+    <Département rdf:about="#Savoie">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <appartient_a_la_region rdf:resource="#Rh&#244;ne-Alpes"/>
+    </Département>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Seine-Maritime -->
+
+    <Département rdf:about="#Seine-Maritime">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <appartient_a_la_region rdf:resource="#Haute-Normandie"/>
+    </Département>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Stromboli -->
+
+    <owl:Thing rdf:about="#Stromboli">
+        <rdf:type rdf:resource="#Volcan"/>
+        <Est_contenu_dans rdf:resource="#Italie"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Suisse -->
+
+    <Pays rdf:about="#Suisse">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <appartient_a_un_continent rdf:resource="#Europe"/>
+    </Pays>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Super-Besse -->
+
+    <owl:Thing rdf:about="#Super-Besse">
+        <rdf:type rdf:resource="#Station_de_ski"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Su&#232;de -->
+
+    <Pays rdf:about="#Su&#232;de">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <appartient_a_un_continent rdf:resource="#Europe"/>
+    </Pays>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Tarbes -->
+
+    <Ville rdf:about="#Tarbes">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <appartient_au_departement rdf:resource="#Hautes-Pyr&#233;n&#233;es"/>
+    </Ville>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Terceira -->
+
+    <Volcan rdf:about="#Terceira">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <Est_contenu_dans rdf:resource="#Portugal"/>
+    </Volcan>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Tignes -->
+
+    <Station_de_ski rdf:about="#Tignes">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Station_de_ski>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Val_d&#39;Is&#232;re -->
+
+    <Station_de_ski rdf:about="#Val_d&#39;Is&#232;re">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Station_de_ski>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Vall&#233;e_d&#39;Aoste -->
+
+    <owl:Thing rdf:about="#Vall&#233;e_d&#39;Aoste">
+        <rdf:type rdf:resource="#Vall&#233;e"/>
+        <appartient_à rdf:resource="#Alpes"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Vall&#233;e_d&#39;Aure -->
+
+    <owl:Thing rdf:about="#Vall&#233;e_d&#39;Aure">
+        <rdf:type rdf:resource="#Vall&#233;e"/>
+        <appartient_à rdf:resource="#Pyr&#233;n&#233;es"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Volcan_d&#39;Agde -->
+
+    <Volcan rdf:about="#Volcan_d&#39;Agde">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <Est_contenu_dans rdf:resource="#France"/>
+    </Volcan>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#Vosges -->
+
+    <Massif_Montagneux rdf:about="#Vosges">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </Massif_Montagneux>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#V&#233;suve -->
+
+    <Volcan rdf:about="#V&#233;suve">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <Est_contenu_dans rdf:resource="#Italie"/>
+    </Volcan>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#for&#234;t_du_Risoux -->
+
+    <Forêt rdf:about="#for&#234;t_du_Risoux">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <Est_contenu_dans rdf:resource="#France"/>
+        <Est_situé_géographiquement_dans rdf:resource="#Jura"/>
+        <Est_contenu_dans rdf:resource="#Suisse"/>
+    </Forêt>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/0/Ontology1262945733986.owl#lac_de_Gu&#233;ry -->
+
+    <owl:Thing rdf:about="#lac_de_Gu&#233;ry">
+        <rdf:type rdf:resource="#Lac"/>
+        <Est_situé_géographiquement_dans rdf:resource="#Massif_Central"/>
+        <Est_contenu_dans rdf:resource="#Puy-de-D&#244;me"/>
+    </owl:Thing>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

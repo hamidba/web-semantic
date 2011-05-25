@@ -18,11 +18,19 @@ public class test {
 	{
 		// TODO Auto-generated method stub	
 		
+		long debut = System.currentTimeMillis();
+		System.out.println("Start : "+debut);
+		
 		Parser p = new Parser();
 		Index ind = new Index();
 	    
-	    Vector<Mot> test = p.get_vectorMot();
+	    Vector<Mot> listeMots = p.get_vectorMot();
+	    System.out.println(listeMots.size());
 	    
-	    ind.createIndex(test);
+	    ind.createIndex(listeMots);
+	    
+	    long fin = System.currentTimeMillis();
+	    System.out.println("End : "+fin);
+	    System.out.println("Durée : "+(fin-debut)/1000);
 	}
 }

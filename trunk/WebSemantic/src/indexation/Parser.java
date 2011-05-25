@@ -40,14 +40,14 @@ public class Parser {
 				}
 			};
 			
-			File repertoire = new File("D:\\Etudes\\M2 ICE 2010-2011\\WEB_SEMANTIQUE\\Collection");
+			File repertoire = new File("resources/collection");
 			File[] files = repertoire.listFiles(filter);
 			
-			System.out.println("Nombre de fichiers xml = "+files.length);
+			//System.out.println("Nombre de fichiers xml = "+files.length);
 			
 			// boucle sur le répertoire contenant tous les documents xml
 			for (File file : files) {
-				System.out.println(file.getName());
+				//System.out.println(file.getName());
 				
 				//On crée un nouveau document JDOM avec en argument le fichier XML que l'on souhaite parser
 				document = sxb.build(file);
@@ -65,11 +65,11 @@ public class Parser {
 	
 	public void parseDoc(String nomDoc)
 	{		
-		String caracSplit = "[ ,;:!?.*/'(){}-[0-9]*«»]";
+		String caracSplit = "[ ,;:!?.*/'(){}-[0-9]*\"«»]";
 		
 		// récupération de la liste des noeuds intéressants pour le parsing		
 		Element pres = racine.getChild("PRESENTATION");
-		String titre = pres.getChildText("TITRE");
+		String titre = pres.getChildText("TITRE").toLowerCase();
 		String[] tabMotTitre = titre.split(caracSplit); // split sur plusieurs caractères de ponctuation
 		
 		String path = "/BALADE[1]/PRESENTATION[1]/TITRE[1]";  
@@ -81,13 +81,14 @@ public class Parser {
 				mot = mot.substring(0, 6);
 			}
 			
-			if(mot.length() > 0 && !_stopListe.contains(mot)){	
+			if(mot.length() > 0 && !_stopListe.contains(mot)){				
+				// on alimente le vecteur de paragraphes qui contient des Mot
 				Mot m = new Mot(mot, path, nomDoc, positionMotTitre++);
-				this._vectorMot.add(m);
+				_vectorMot.add(m);
 			}
 		}	
 		
-		String auteur = pres.getChildText("AUTEUR");	
+		//String auteur = pres.getChildText("AUTEUR");	
 		
 		// on regarde si une description est présente
 		if(!pres.getChildren("DESCRIPTION").isEmpty()){
@@ -95,12 +96,13 @@ public class Parser {
 			
 			//On crée un Iterator sur notre liste de paragraphes description
 			Iterator iDesc = pDescription.iterator();
-			Vector<Element> vectorParaDesc = new Vector<Element>();
+			//Vector<Element> vectorParaDesc = new Vector<Element>();
+			int positionPara = 1;
 			while(iDesc.hasNext())
 			{
 				//On recrée l'Element courant à chaque tour de boucle
 				Element pDesc = (Element)iDesc.next();
-				int positionPara = vectorParaDesc.size()+1;
+				//int positionPara = vectorParaDesc.size()+1;
 				path = "/BALADE[1]/PRESENTATION[1]/DESCRIPTION[1]/P["+positionPara+"]";
 
 				//création du tableau de tous les mots du paragraphe
@@ -114,14 +116,16 @@ public class Parser {
 						mot = mot.substring(0, 6);
 					}
 					
-					if(mot.length() > 0 && !_stopListe.contains(mot)){	
+					if(mot.length() > 0 && !_stopListe.contains(mot)){						
+						// on alimente le vecteur de paragraphes qui contient des Mot
 						Mot m = new Mot(mot, path, nomDoc, positionMot++);
-						this._vectorMot.add(m);
+						_vectorMot.add(m);
 					}
 				}				
 				
 				// on ajoute l'élément courant dans le vecteur de description
-				vectorParaDesc.add(pDesc);
+				//vectorParaDesc.add(pDesc);
+				positionPara++;
 			}		
 		}
 		
@@ -131,12 +135,13 @@ public class Parser {
 			List pRecit = recit.getChildren("P");
 			// on va itérer sur les P sous la balise SEC
 			Iterator iRecitPara = pRecit.iterator();
-			Vector<Element> vectorRecitPara = new Vector<Element>();
+			//Vector<Element> vectorRecitPara = new Vector<Element>();
+			int positionRecitPara = 1;
 			while(iRecitPara.hasNext())
 			{
 				// on récupère l'élément P courant
 				Element p = (Element)iRecitPara.next();
-				int positionRecitPara = vectorRecitPara.size()+1;
+				//int positionRecitPara = vectorRecitPara.size()+1;
 				
 				path = "/BALADE[1]/RECIT[1]/P["+positionRecitPara+"]";
 				
@@ -151,14 +156,16 @@ public class Parser {
 						mot = mot.substring(0, 6);
 					}
 					
-					if(mot.length() > 0 && !_stopListe.contains(mot)){	
+					if(mot.length() > 0 && !_stopListe.contains(mot)){						
+						// on alimente le vecteur de paragraphes qui contient des Mot
 						Mot m = new Mot(mot, path, nomDoc, positionMot++);
-						this._vectorMot.add(m);
+						_vectorMot.add(m);
 					}
 				}				
 				
 				// on ajoute l'élément courant dans le vecteur de description
-				vectorRecitPara.add(p);
+				//vectorRecitPara.add(p);
+				positionRecitPara++;
 			}
 		}
 		
@@ -166,23 +173,25 @@ public class Parser {
 		
 		// on va itérer sur les SEC qui se trouvent sous la balise RECIT
 		Iterator iSecRecit = secRecit.iterator();
-		Vector<Element> vectorRecitSec = new Vector<Element>();
+		//Vector<Element> vectorRecitSec = new Vector<Element>();
+		int positionRecitSec = 1;
 		while(iSecRecit.hasNext())
 		{
 			// on récupère l'élément SEC courant
 			Element sec = (Element)iSecRecit.next();
-			int positionRecitSec = vectorRecitSec.size()+1;
+			//int positionRecitSec = vectorRecitSec.size()+1;
 			
 			List pRecitSec = sec.getChildren("P");
 			
 			// on va itérer sur les P sous la balise SEC
 			Iterator iRecitSecPara = pRecitSec.iterator();
-			Vector<Element> vectorRecitSecPara = new Vector<Element>();
+			//Vector<Element> vectorRecitSecPara = new Vector<Element>();
+			int positionRecitSecPara = 1;
 			while(iRecitSecPara.hasNext())
 			{
 				// on récupère l'élément P courant
 				Element p = (Element)iRecitSecPara.next();
-				int positionRecitSecPara = vectorRecitSecPara.size()+1;
+				//int positionRecitSecPara = vectorRecitSecPara.size()+1;
 				
 				path = "/BALADE[1]/RECIT[1]/SEC["+positionRecitSec+"]/P["+positionRecitSecPara+"]";
 				
@@ -198,20 +207,23 @@ public class Parser {
 					}
 					
 					if(mot.length() > 0 && !_stopListe.contains(mot)){	
+						// on alimente le vecteur de paragraphes qui contient des Mot
 						Mot m = new Mot(mot, path, nomDoc, positionMot++);
-						this._vectorMot.add(m);
+						_vectorMot.add(m);
 					}
 				}				
 				
 				// on ajoute l'élément courant dans le vecteur de description
-				vectorRecitSecPara.add(p);
+				//vectorRecitSecPara.add(p);
+				positionRecitSecPara++;
 			}
-			vectorRecitSec.add(sec);
+			//vectorRecitSec.add(sec);
+			positionRecitSec++;
 		}		
 	}
 	
 	public static Vector<String> getStopListe(){
-		String fichier = "D:\\Etudes\\M2 ICE 2010-2011\\WEB_SEMANTIQUE\\stopListe.txt";
+		String fichier = "resources/stopListe.txt";
 		Vector<String> vectorStopListe = new Vector<String>();
 		
 		//lecture du fichier	

@@ -14,7 +14,7 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 
 /**
- * Classe permettant la creation d'index à partir des donnÈes reÁues
+ * Classe permettant la creation d'index √† partir des donn√©es re√ßues
  * @author m2ice-2
  *
  */
@@ -27,13 +27,13 @@ public class Index
 	public Index()
 	{
 		//Mise en place de la connexion
-		_handlerBD = new Connector("127.0.0.1", "index", "root", "root").getConnection();
+		_handlerBD = new Connector("127.0.0.1", "index", "root", "").getConnection();
 
 	}
 	
 	
 	/**
-	 * Creation de l'index ‡ partir d'un  vector de tous les mots necessaires
+	 * Creation de l'index √† partir d'un  vector de tous les mots necessaires
 	 * @throws SQLException 
 	 */
 	public void createIndex(Vector<Mot> data) throws SQLException
@@ -41,7 +41,7 @@ public class Index
 		//Initialisation des mots
 		_data = data;
 		
-		//Boucle sur la totalitÈ du vector
+		//Boucle sur la totalit√© du vector
 		for (Mot mot : _data)
 		{
 			System.out.println(mot.get_nomDoc());
@@ -58,7 +58,7 @@ public class Index
 			}
 			else
 			{
-				//l'insertion a ÈchouÈ (Contrainte de clé primaire) -> nbOccur++ et Insertion d'une ligne dans la table para
+				//l'insertion a √©chou√© (Contrainte de cl≈Ω primaire) -> nbOccur++ et Insertion d'une ligne dans la table para
 				addOccur(mot.get_chaine());
 				addParagraphe(mot);
 			}
@@ -79,7 +79,6 @@ public class Index
 		Statement s = (Statement) _handlerBD.createStatement();
 		
 		int count = s.executeUpdate("INSERT INTO mot (mot) VALUES ('"+m.get_chaine()+"') ");
-		System.out.println("Count :"+count);
 		s.close();
 		return count;		
 	}
@@ -110,7 +109,7 @@ public class Index
 		
 		if(rs.first())
 		{
-			//Le mot existe déja dans le paragraphe on incremente sa fréquence
+			//Le mot existe d≈Ωja dans le paragraphe on incremente sa fr≈Ωquence
 			s.execute("UPDATE paragraphe SET freq_mot = freq_mot+1 WHERE mot = '"+m.get_chaine()+"' AND path = '"+m.get_path()+"' AND nomDoc = '"+m.get_nomDoc()+"'");
 			return 0;
 		}
@@ -247,7 +246,7 @@ public class Index
 		
 		while(rs.next())
 		{
-			//On recupère un mot
+			//On recupÔøΩre un mot
 			mot = rs.getString("mot");
 			path = rs.getString("path");
 			

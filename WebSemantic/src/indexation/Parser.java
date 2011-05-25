@@ -6,7 +6,6 @@ import java.io.FileInputStream;
 import java.io.FilenameFilter;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.lang.Character.Subset;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
@@ -65,7 +64,7 @@ public class Parser {
 	
 	public void parseDoc(String nomDoc)
 	{		
-		String caracSplit = "[ ,;:!?.*/'(){}-[0-9]*\"«»]";
+		String caracSplit = "[ ,;:!?.*_/'(){}-[0-9]*\\\\\\\"«»]";
 		
 		// récupération de la liste des noeuds intéressants pour le parsing		
 		Element pres = racine.getChild("PRESENTATION");

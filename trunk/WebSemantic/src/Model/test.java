@@ -25,9 +25,12 @@ public class test {
 		Index ind = new Index();
 	    
 	    Vector<Mot> listeMots = p.get_vectorMot();
-	    System.out.println(listeMots.size());
+	    System.out.println("Nb mots = "+listeMots.size());
 	    
-	    ind.createIndex(listeMots);
+	    Vector<String> doublons = p.get_vectorDoublon();
+	    System.out.println("nb doublons = "+doublons.size());
+	    
+	    ind.createIndex(listeMots, doublons);
 	    
 	    long fin = System.currentTimeMillis();
 	    System.out.println("End : "+fin);

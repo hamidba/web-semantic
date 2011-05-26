@@ -36,7 +36,7 @@ public class Index
 	 * Creation de l'index à partir d'un  vector de tous les mots necessaires
 	 * @throws SQLException 
 	 */
-	public void createIndex(Vector<Mot> data) throws SQLException
+	public void createIndex(Vector<Mot> data, Vector<String> doublons) throws SQLException
 	{
 		//Initialisation des mots
 		_data = data;
@@ -44,7 +44,7 @@ public class Index
 		//Boucle sur la totalité du vector
 		for (Mot mot : _data)
 		{
-			System.out.println(mot.get_nomDoc());
+			//System.out.println(mot.get_nomDoc());
 			
 			
 			//Insertion d'un mot dans la table

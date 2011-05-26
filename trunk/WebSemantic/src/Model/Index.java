@@ -1,6 +1,7 @@
 package Model;
 
 import java.sql.ResultSet;
+import java.sql.*;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import classes.Connector;
 import classes.Mot;
 
 import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.Statement;
 
 /**
@@ -66,6 +68,73 @@ public class Index
 			
 		}		
 	}
+	
+	
+	public void indexer(Vector<Mot> data ) throws SQLException
+	{
+		
+		_data = data;
+		
+		//Insertion des mot
+		String reqInsertionMot = "INSERT INTO mot(mot) VALUES (?) ON DUPLICATE KEY UPDATE nb_occur=nb_occur+1";
+		String reqInsertionPara = "INSERT INTO paragraphe (nomDoc, path, position, mot) VALUES (?,?,?,?)";
+		
+		System.out.println("OK1");
+		
+		//Préparation de la requete
+		PreparedStatement ps = (PreparedStatement) _handlerBD.prepareStatement(reqInsertionMot);
+		PreparedStatement ps2 = (PreparedStatement) _handlerBD.prepareStatement(reqInsertionPara);
+		
+		System.out.println("OK2");
+		
+		//Construction de la chaine à inserer
+		String chaine = "";
+		String temp;
+		
+		int i = 0; 
+		
+		for (Mot m : _data)
+		{
+			if(i == 0)
+			{
+				chaine+="("+m.get_chaine()+")";
+			}
+
+		    chaine+=",("+m.get_chaine()+")";
+				
+			i++;
+		}
+		
+		System.out.println(chaine);
+		
+		/*
+		
+		for(int i=0; i < _data.size(); i++)
+		{
+			Mot m = _data.get(i);
+			if(i == 0)
+			{
+			    temp = "("+m.get_chaine()+")";
+				chaine+=temp;
+			}
+			else
+			{
+				 temp = ",("+m.get_chaine()+")";
+				 chaine+=temp;
+				
+			}
+		}
+		*/
+		
+		//execution de la requete
+		ps.setString(1,chaine);
+		System.out.println("Debut de l'indexation ! Loading ...");
+		ps.executeUpdate();
+		
+	
+	}
+		
+		
 	
 	
 	

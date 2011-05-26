@@ -21,6 +21,7 @@ public class Parser {
 
 	// création du tableau de mots à retourner
 	private Vector<Mot> _vectorMot = new Vector<Mot>();
+	private Vector<String> _vectorDoublon = new Vector<String>();
 	private Vector<String> _stopListe = getStopListe();
 	
 	public Parser()
@@ -80,8 +81,13 @@ public class Parser {
 				mot = mot.substring(0, 6);
 			}
 			
-			if(mot.length() > 0 && !_stopListe.contains(mot)){				
-				// on alimente le vecteur de paragraphes qui contient des Mot
+			if(mot.length() > 0 && !_stopListe.contains(mot)){			
+				// on alimente le vecteur de doublons
+				if(!_vectorDoublon.contains(mot)){
+					_vectorDoublon.add(mot);
+				}
+				
+				// on alimente le vecteur de mots qui contient des Mot
 				Mot m = new Mot(mot, path, nomDoc, positionMotTitre++);
 				_vectorMot.add(m);
 			}
@@ -115,7 +121,12 @@ public class Parser {
 						mot = mot.substring(0, 6);
 					}
 					
-					if(mot.length() > 0 && !_stopListe.contains(mot)){						
+					if(mot.length() > 0 && !_stopListe.contains(mot)){	
+						// on alimente le vecteur de doublons
+						if(!_vectorDoublon.contains(mot)){
+							_vectorDoublon.add(mot);
+						}
+						
 						// on alimente le vecteur de paragraphes qui contient des Mot
 						Mot m = new Mot(mot, path, nomDoc, positionMot++);
 						_vectorMot.add(m);
@@ -155,7 +166,12 @@ public class Parser {
 						mot = mot.substring(0, 6);
 					}
 					
-					if(mot.length() > 0 && !_stopListe.contains(mot)){						
+					if(mot.length() > 0 && !_stopListe.contains(mot)){	
+						// on alimente le vecteur de doublons
+						if(!_vectorDoublon.contains(mot)){
+							_vectorDoublon.add(mot);
+						}
+						
 						// on alimente le vecteur de paragraphes qui contient des Mot
 						Mot m = new Mot(mot, path, nomDoc, positionMot++);
 						_vectorMot.add(m);
@@ -206,6 +222,11 @@ public class Parser {
 					}
 					
 					if(mot.length() > 0 && !_stopListe.contains(mot)){	
+						// on alimente le vecteur de doublons
+						if(!_vectorDoublon.contains(mot)){
+							_vectorDoublon.add(mot);
+						}
+						
 						// on alimente le vecteur de paragraphes qui contient des Mot
 						Mot m = new Mot(mot, path, nomDoc, positionMot++);
 						_vectorMot.add(m);
@@ -218,7 +239,7 @@ public class Parser {
 			}
 			//vectorRecitSec.add(sec);
 			positionRecitSec++;
-		}		
+		}	
 	}
 	
 	public static Vector<String> getStopListe(){
@@ -247,5 +268,9 @@ public class Parser {
 	
 	public Vector<Mot> get_vectorMot() {
 		return _vectorMot;
+	}
+	
+	public Vector<String> get_vectorDoublon(){
+		return _vectorDoublon;
 	}
 }

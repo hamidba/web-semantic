@@ -38,21 +38,26 @@ public class OntologyManager {
 		}
 	}
 	
-	public HashMap<String, String> getConcepts(){
-		HashMap<String, String> concepts = new HashMap<String, String>();
+	public HashMap<String, Synonym> getConcepts(){
+		HashMap<String, Synonym> concepts = new HashMap<String, Synonym>();
 					
 		OWLAnnotationProperty label = _factory.getOWLAnnotationProperty(OWLRDFVocabulary.RDFS_LABEL.getIRI());
 		
 		for(OWLClass cls : _ontology.getClassesInSignature()){
+			// déclaration d'un nouvel objet synonyme pour stocker les synonymes de classe de l'ontologie
+			Synonym s = new Synonym(cls.toString());
+			
 			// Get the annotations on the class that use the label property
 			for (OWLAnnotation annotation : cls.getAnnotations(_ontology, label)) {
 				if (annotation.getValue() instanceof OWLLiteral) {
 					OWLLiteral val = (OWLLiteral) annotation.getValue();
-						if (val.hasLang("fr")) {
-							concepts.put(cls.toString(), val.getLiteral());
-					}
+					// on regarde si la classe est déjà présente dans la hashMap
+					s.addSynonym(val.getLiteral());
 				}
 			}
+			
+			// ajout du concept avec ses synonymes dans le vecteur de concepts
+			concepts.put(cls.toString(), s);
 		}
 		
 		return concepts;
@@ -60,13 +65,17 @@ public class OntologyManager {
 	
 	public static void main(String[] args) {
 		OntologyManager o = new OntologyManager();
-		HashMap<String, String> test;
+		HashMap<String, Synonym> test;
 		test = o.getConcepts();
 		
-		for(Entry<String, String> entry : test.entrySet()) {
+		for(Entry<String, Synonym> entry : test.entrySet()) {
 		    String cle = entry.getKey();
-		    String valeur = entry.getValue();
-		    System.out.println(cle+" => "+valeur);
+		    Synonym valeur = entry.getValue();
+		    System.out.print(cle+" => ");
+		    for(String val : valeur.get_synonymes()){
+		    	System.out.print(val+" - ");
+		    }
+		    System.out.println();
 		}
 	}
 }

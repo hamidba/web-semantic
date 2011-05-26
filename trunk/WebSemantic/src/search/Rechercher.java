@@ -60,8 +60,10 @@ public class Rechercher
 		}
 		
 		
-		//Double[] result = bestResult(innerProducts); 
-		printResult(innerProducts);
+		Vector result = bestResults(innerProducts); 
+		printResult(result);
+		
+		Evaluateur eval= new Evaluateur("qrel.01", result);
 	
 		
 		
@@ -87,15 +89,6 @@ public class Rechercher
 			vecteursParagraphe.add(i,para);
 			
 		}
-/*
-		for(int i=0; i < para.size(); i++)
-		{
-			if(para.get(i) != null)
-			{
-				System.out.println(para.get(i));
-			}
-		}
-*/
 		
 	}
 	
@@ -136,7 +129,6 @@ public class Rechercher
 		{
 			if((q.get(i) != null) && (p.get(i) != null))
 			{
-				System.out.println(p.get(i));
 				innerProduct+=p.get(i)*q.get(i);
 			}
 		}
@@ -145,16 +137,17 @@ public class Rechercher
 		
 	}
 	
-	public Double[] bestResult(Double[] innerProducts)
+	public Vector bestResults(Double[] innerProducts)
 	{
-		Double[] result = new Double[innerProducts.length];
+		Vector result = new Vector();
 		
 		for(int i = 0; i < innerProducts.length; i++)
 		{
-			if(innerProducts[i] != 0)
+			if(innerProducts[i] != 0.0)
 			{
 				
-				result[i] = innerProducts[i];
+				result.add(distinctPara.get(i));
+			
 			}
 			
 		}
@@ -166,16 +159,15 @@ public class Rechercher
 		
 		
 	
-	public void printResult(Double[] result)
+	public void printResult(Vector result)
 	{
 		
-		for(int i = 0; i < result.length; i++)
+		for(int i = 0; i < result.size(); i++)
 		{
 			
-				if(result[i] != 0.0)
-				{
-					System.out.println(distinctPara.get(i)+" "+result[i]) ;
-				}
+				
+					System.out.println(result.get(i)) ;
+				
 			
 		}
 		

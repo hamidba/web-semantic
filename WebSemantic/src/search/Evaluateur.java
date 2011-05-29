@@ -9,17 +9,8 @@ public class Evaluateur
 	{
 		Vector base = loadFile("requetes/qrel/"+qrel);
 		
-		for (int i = 0; i < result.size(); i++)
-		{
-			System.out.println(result.get(i));
-		}
-		
 		System.out.println("Rappel de la requete : "+rappel(base, result));
 		System.out.println("PrŽcision de la requete : "+precision(base, result));
-		
-		
-		
-		
 		
 	}
 	

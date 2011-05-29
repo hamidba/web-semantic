@@ -29,7 +29,7 @@ public class Index
 	public Index()
 	{
 		//Mise en place de la connexion
-		_handlerBD = new Connector("127.0.0.1", "index", "root", "").getConnection();
+		_handlerBD = new Connector("127.0.0.1", "index", "root", "root").getConnection();
 
 	}
 	
@@ -38,7 +38,7 @@ public class Index
 	 * Creation de l'index Ã  partir d'un  vector de tous les mots necessaires
 	 * @throws SQLException 
 	 */
-	public void createIndex(Vector<Mot> data, Vector<String> doublons) throws SQLException
+	public void createIndex(Vector<Mot> data) throws SQLException
 	{
 		//Initialisation des mots
 		_data = data;
@@ -78,16 +78,14 @@ public class Index
 		//Insertion des mot
 		String reqInsertionMot = "INSERT INTO mot(mot) VALUES (?) ON DUPLICATE KEY UPDATE nb_occur=nb_occur+1";
 		String reqInsertionPara = "INSERT INTO paragraphe (nomDoc, path, position, mot) VALUES (?,?,?,?)";
+
 		
-		System.out.println("OK1");
-		
-		//PrŽparation de la requete
+		//Prï¿½paration de la requete
 		PreparedStatement ps = (PreparedStatement) _handlerBD.prepareStatement(reqInsertionMot);
 		PreparedStatement ps2 = (PreparedStatement) _handlerBD.prepareStatement(reqInsertionPara);
+
 		
-		System.out.println("OK2");
-		
-		//Construction de la chaine ˆ inserer
+		//Construction de la chaine ï¿½ inserer
 		String chaine = "";
 		String temp;
 		

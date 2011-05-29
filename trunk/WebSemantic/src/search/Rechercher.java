@@ -1,6 +1,10 @@
 package search;
 
 import classes.Connector;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -31,42 +35,48 @@ public class Rechercher
 	Vector<Vector<Double>> vecteursParagraphe;
 	Vector<String> distinctPara;
 	
-	public Rechercher(String requete) throws SQLException
+	public Rechercher() throws SQLException, IOException
 	{
 		index = new Index();
-		req = requete;
-		//mots = req.split(" ");
 		
-		//Pour chaque mot on calcule son tf, son idf puis son tf-idf
-		//HashMap tf = getTF(req);
-		//HashMap tfIdf = getTfIdf(tf, getIDF(req));
+		BufferedReader br = new BufferedReader(
+                new InputStreamReader(System.in));
+		String req;
 		
-		//Construction de l'espace vectoriel
-		
+		System.out.println("Lancement du moteur, Veuillez patientez svp ...\n");
 		espaceVectoriel();
 		
-		//Construction vecteur de la requete
-		Vector<Double> q = requeteToVector(req);
+		Vector<Double> q ;
+		Double[] innerProducts;
+		Vector<Double> para;
 		
+		System.out.print("Entrer votre requete ou 'q' pour quitter : ");
+		req = br.readLine();
 		
-		Double[] innerProducts = new Double[vecteursParagraphe.size()];
-		Vector<Double> para = new Vector<Double>();
-		
-		for(int i = 0; i < vecteursParagraphe.size(); i++)
+		while(!req.equals("q"))
 		{
-			para = (Vector<Double>) vecteursParagraphe.get(i);
+			innerProducts = new Double[vecteursParagraphe.size()];
+			para = new Vector<Double>();
 			
-			innerProducts[i] = cosinus(q, para );
+			//Construction vecteur de la requete
+			q = requeteToVector(req);
+			
+			for(int i = 0; i < vecteursParagraphe.size(); i++)
+			{
+				para = (Vector<Double>) vecteursParagraphe.get(i);
+				
+				innerProducts[i] = innerProduct(q, para );
+			}
+			
+			
+			Vector result = bestResults(innerProducts); 
+			printResult(result);
+			
+			System.out.print("Entrer votre requete ou 'q' pour quitter : ");
+			req = br.readLine();
+			
 		}
-		
-		
-		Vector result = bestResults(innerProducts); 
-		printResult(result);
-		
-		Evaluateur eval= new Evaluateur("qrel.01", result);
 	
-		
-		
 	}
 	
 	
@@ -114,12 +124,12 @@ public class Rechercher
 	}
 	
 	/**
-	 * Calcul de l'angle entre un paragraphe et une requete
+	 * 
 	 * @param q
 	 * @param p
 	 * @return
 	 */
-	public double cosinus(Vector<Double> q, Vector<Double> p)
+	public double innerProduct(Vector<Double> q, Vector<Double> p)
 	{
 		int size = vocabulaire.size();
 		Double innerProduct = 0.0;
@@ -151,8 +161,6 @@ public class Rechercher
 			}
 			
 		}
-		
-		//Arrays.sort(result);
 		
 		return result;
 	}
